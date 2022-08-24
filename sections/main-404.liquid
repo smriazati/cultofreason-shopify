@@ -4,7 +4,7 @@
   <div class="flex-row flex-center">
     {% for product in collections['404'].products %}
       <a href="{{ product.url }}">
-        <img src="{{ product.featured_image | image_url }}" alt="{{ product.featured_image.alt }}" width=207 height=276 loading="lazy" class="object-cover">
+        <img src="{{ product.featured_image | image_url }}" alt="{{ product.featured_image.alt }}" width=207 height=276 loading="lazy" class="object-cover-min">
       </a>
     {% endfor %}
   </div>

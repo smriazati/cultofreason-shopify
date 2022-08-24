@@ -34,6 +34,7 @@
     --active: #9EF875;
     --body-text-color: var(--volcano);
     --link-text-color: var(--volcano-600);
+    --site-header-height: 96px;
 }
 
 * {
@@ -43,6 +44,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 18px;
 }
 
@@ -111,6 +113,31 @@ p {
     text-transform: uppercase;
 }
 
+.text-product-preview-title {
+    font-family: var(--sans-serif);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.text-footer-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.text-footer-list {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.text-footer-newsletter-text {
+    font-size: 14px;
+    line-height: 16px;
+    color: #737373;
+}
+
 .large-text {
     font-family: var(--sans-serif);
     font-size: 22px;
@@ -156,6 +183,14 @@ p {
     text-align: center;
 }
 
+.text-muted {
+    color: var(--volcano-300);
+}
+
+.text-strike {
+    text-decoration: line-through;
+}
+
 .flex-row {
     display: flex;
 }
@@ -179,9 +214,15 @@ p {
     justify-content: space-between;
 }
 
-.object-cover {
+.object-cover-min {
     min-height: 100%;
     min-width: 100%;
+    object-fit: cover;
+}
+
+.object-cover-max {
+    max-height: 100%;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -211,10 +252,14 @@ button:hover,
     margin: 0 auto;
 }
 
+.page-vert-padding {
+    padding-top: 56px;
+}
+
 /* header */
 
 .site-main {
-    padding-top: 70px;
+    padding-top: var(--site-header-height);
 }
 
 .nowrap {
@@ -228,4 +273,73 @@ button:hover,
 .bg-dark {
     background: var(--volcano);
     color: white;
+}
+
+/* utils */
+
+.btn-circle {
+    border: 1px solid var(--volcano);
+    border-radius: 1rem;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+}
+
+.btn-no-hover:hover {
+    cursor: default;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: auto;
+    grid-column-gap: 40px;
+}
+
+/* icons */
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--volcano);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+}
+
+
+/* forms */
+
+.btn-square {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 8px 28px;
+    border: 1px solid var(--volcano)
+}
+
+input {
+    border-radius: 0;
+    outline: 0;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input:not(.input-plain) {
+    border-bottom: 1px solid var(--volcano)
+}
+
+input::placeholder {
+    opacity: 1;
+    color: var(--volcano);
+}
+
+.margin-left-sm {
+    margin-left: 13px;
+}
+
+.img-outline {
+    border: 1px solid var(--volcano);
+    padding: 24px;
 }
