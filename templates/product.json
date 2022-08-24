@@ -1,13 +1,80 @@
 {
   "sections": {
-    "main": {
-      "type": "main-product",
+    "product-hero": {
+      "type": "product-hero",
+      "settings": {
+      }
+    },
+    "product-js": {
+      "type": "product-js",
+      "settings": {
+      }
+    },
+    "1661372573cb905171": {
+      "type": "apps",
+      "blocks": {
+        "0cd35919-2fa6-47db-a055-49d578365d35": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#000000",
+            "star_size": 15,
+            "text_align": "center",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
+          }
+        }
+      },
+      "block_order": [
+        "0cd35919-2fa6-47db-a055-49d578365d35"
+      ],
+      "settings": {
+      }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {
+      }
+    },
+    "1661372559f7fdd732": {
+      "type": "apps",
+      "blocks": {
+        "7018968e-95d6-4573-83ff-edcd2106738f": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "7018968e-95d6-4573-83ff-edcd2106738f"
+      ],
+      "settings": {
+      }
+    },
+    "why_it_works": {
+      "type": "product-why-it-works",
       "settings": {
         "always": "Esthetician-developed\nMade in the USA\nVegan-friendly\nPlant-based\nCruelty-free\nNo plastic beads"
+      }
+    },
+    "testimonial": {
+      "type": "product-testimonial",
+      "settings": {
+      }
+    },
+    "add_to_cart": {
+      "type": "product-add-to-cart",
+      "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "product-hero",
+    "product-js",
+    "1661372573cb905171",
+    "reviews",
+    "1661372559f7fdd732",
+    "why_it_works",
+    "testimonial",
+    "add_to_cart"
   ]
 }

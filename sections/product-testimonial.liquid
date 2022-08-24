@@ -1,0 +1,39 @@
+<div class="testimonial-wrapper page-container">
+    {% if product.metafields.custom.testimonial_image and product.metafields.custom.testimonial_text%}
+        <div class="testimonial-content-wrapper flex-row flex-align-center">
+            <div class="testimonial-image-wrapper">
+                <img src="{{ product.metafields.custom.testimonial_image | image_url }}" alt="{{ product.metafields.custom.testimonial_image.alt }}" loading="lazy" width=368 height=474 class="img-outline" />
+            </div>
+            <div class="testimonial-text-wrapper">
+                <p class="blockquote">&ldquo;{{ product.metafields.custom.testimonial_text }}&rdquo;</p>
+            </div>
+        </div>
+    {% endif %}
+    <div class="back-button text-center">
+        <a href="/collections/catalog" class="link-plain">
+            Back to Shop
+        </a>
+    </div>
+
+</div>
+
+{% style %}
+
+.testimonial-content-wrapper {
+    padding-top: 100px;
+    max-width: 845px;
+    margin: 0 auto;
+}
+.testimonial-wrapper .testimonial-text-wrapper {
+    padding-left: 132px;
+}
+
+.testimonial-wrapper .back-button {
+    margin: 100px 0;
+    font-size: 16px;
+    line-height: 19px;
+}
+.testimonial-wrapper .back-button a {
+    border-bottom: 1px solid #1B1D1E;
+}
+{% endstyle %}

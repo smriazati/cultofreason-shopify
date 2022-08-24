@@ -1,0 +1,131 @@
+<div class="main-product page-container page-container-mb-full">
+    <div class="hero-wrapper">
+        <div class="gallery-wrapper">
+            {%- assign image_count = 0 -%}
+            <div class="gallery-images">
+                {%- for img in product.images -%}
+                    <div class="gallery-image-wrapper">
+                        <img src="{{ img.src | image_url }}" alt="{{ img.alt }}" loading="lazy" width=716 height class="" />
+                    </div>
+                    {%- assign image_count = image_count | plus: 1 -%}
+                {%- endfor -%}
+            </div>
+            <div class="gallery-controls">
+                {{ image_count }}
+            </div>
+        </div>
+        <div class="text-wrapper">
+
+            <a href="/collections/catalog" class="back-button text-tiny link-plain flex-row flex-align-center mb-24">
+                {%- render 'icon-back' -%} <span class="ml-1ch"> Back</span>
+            </a>
+
+            <h1 class="h1 mb-4">{{ product.title }}</h1>
+            
+            {%- if product.metafields.custom.subheadline != blank -%}
+                <h2 class="text-product-subheading mb-4">{{ product.metafields.custom.subheadline }}</h2>
+            {%- endif %}
+            {%- if product.metafields.custom.size != blank -%}
+                <p class="text-product-size mb-4">{{ product.metafields.custom.size }}</p>
+            {%- endif -%}
+
+            <div class="mb-8" id="customProductReviewsStars">
+            </div>
+
+            <p class="text mb-24">{{ product.description }}</p>
+
+            {% comment %} <h3>Ingredients</h3> {% endcomment %}
+
+            {% if product.metafields.custom.made_for_2 != blank %}
+                <h3 class="text-small-bold mb-4">Made for</h3>
+                <p class="link-inline mb-24">{{ product.metafields.custom.made_for_2 | replace: ',', ', ' | replace: '"', '' | replace: '[', '' | replace: ']', '' }}</p>
+                
+            {% endif %}
+
+            <div class="accordion-wrapper" id="accordion">
+                <div class="accordion-item">
+                    {% if product.metafields.custom.instructions != 
+                    blank %}
+                        <div class="accordion-title h3">
+                            <h3 class="h3">How to use</h3>
+                        </div>
+                        <div class="accordion-collapsible">
+                            <p>{{ product.metafields.custom.instructions | newline_to_br }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="accordion-item">
+                    {% if product.metafields.custom.ingredients_list != blank %}
+                        <div class="accordion-title h3">
+                            <h3 class="h3">Ingredients</h3>
+                        </div>
+                        <div class="accordion-collapsible">
+                            <p>{{ product.metafields.custom.ingredients_list }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="accordion-item">
+                    {% if product.metafields.custom.recycling != blank %}
+                        <div class="accordion-title h3">
+                            <h3 class="h3">Recycling</h3>
+                        </div>
+                        <div class="accordion-collapsible">
+                            <p>{{ product.metafields.custom.recycling | newline_to_br }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+  
+{% style %} 
+.main-product .hero-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+.main-product .hero-wrapper .gallery-wrapper {
+    width: 100%;
+    max-height: 100vh;
+}
+
+.main-product .hero-wrapper .gallery-wrapper .gallery-images {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+.main-product .hero-wrapper .gallery-wrapper .gallery-images > * {
+    width: 100%;
+    max-height: 100vh;
+    min-height: 100vh;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.main-product .gallery-wrapper img {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+
+.main-product .text-wrapper {
+    padding: 32px 80px;
+}
+
+
+
+#customProductReviews:not(.loaded) {
+    background: black;
+    height: 22px;
+    width: auto;
+}
+
+
+
+{% endstyle %}
+

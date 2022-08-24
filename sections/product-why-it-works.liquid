@@ -1,0 +1,38 @@
+<div class="features-wrapper">
+  <div class="page-container flex-row flex-full">
+    <div class="flex-col">
+      <h2 class="h3 mb-24">Why it works</h2>
+      <p class="h2">{{ product.metafields.custom.why_it_works }}</p>
+    </div>
+    <div class="flex-col">
+      <h2 class="h3 mb-24">Always</h2>
+      <p class="text-24">{{ section.settings.always | newline_to_br }}</p>
+    </div>
+  </div>
+</div>
+
+{% style %}
+.features-wrapper {
+  background: #DDE0E5;
+  padding: 100px 0;
+}
+.features-wrapper .flex-row > *:first-child {
+  flex: 0 0 70%;  
+}
+.features-wrapper .flex-row > *:last-child {
+  flex: 0 0 25%;
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Why it works",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "always",
+      "label": "Always..."
+    }
+  ]
+}
+{% endschema %}

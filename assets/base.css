@@ -113,6 +113,18 @@ p {
     text-transform: uppercase;
 }
 
+.text-product-subheading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.text-24 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
 .text-product-preview-title {
     font-family: var(--sans-serif);
     font-size: 20px;
@@ -127,11 +139,13 @@ p {
     line-height: 20px;
 }
 
+.text-tiny,
 .text-footer-list {
     font-size: 12px;
     line-height: 14px;
 }
 
+.text-product-size,
 .text-footer-newsletter-text {
     font-size: 14px;
     line-height: 16px;
@@ -162,6 +176,21 @@ p {
     letter-spacing: 0em;
 }
 
+.link-inline {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #949B9E;
+}
+
+.text-small-bold {
+    font-family: var(--sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+}
+
 .detail {
     font-family: var(--sans-serif);
     font-size: 14px;
@@ -176,7 +205,7 @@ p {
     font-weight: 200;
     line-height: 60px;
     letter-spacing: 0em;
-
+    text-transform: uppercase;
 }
 
 .text-center {
@@ -198,6 +227,10 @@ p {
 .flex-col {
     display: flex;
     flex-direction: column;
+}
+
+.flex-align-center {
+    align-items: center;
 }
 
 .flex-align-end {
@@ -251,6 +284,14 @@ button:hover,
     max-width: 1400px;
     margin: 0 auto;
 }
+
+@media (max-width: 1400px) {
+    .page-container:not(.page-container-mb-full) {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
 
 .page-vert-padding {
     padding-top: 56px;
@@ -342,4 +383,66 @@ input::placeholder {
 .img-outline {
     border: 1px solid var(--volcano);
     padding: 24px;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.ml-1ch {
+    margin-left: 1ch;
+}
+
+/* accordion */
+
+.accordion-wrapper .accordion-title {
+    padding: 12px 0;
+    border-top: 1px solid var(--volcano);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-wrapper .accordion-title::after {
+    content: '+';
+    display: flex;
+}
+
+.accordion-wrapper .accordion-title:hover {
+    cursor: pointer;
+}
+
+.accordion-wrapper .accordion-collapsible {
+    height: 0;
+    overflow: hidden;
+    transition: .3s ease all;
+}
+
+.accordion-wrapper .expanded .accordion-collapsible {
+    height: 100%;
+}
+
+.accordion-wrapper .expanded .accordion-title::after {
+    content: '-';
+}
+
+.accordion-wrapper .accordion-collapsible p {
+    padding-bottom: 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    opacity: 0;
+    transition: .5s ease all;
+}
+
+.accordion-wrapper .expanded .accordion-collapsible p {
+    opacity: 1;
 }
