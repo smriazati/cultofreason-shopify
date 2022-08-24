@@ -5,9 +5,25 @@
       "settings": {
         "always": "Esthetician-developed\nMade in the USA\nVegan-friendly\nPlant-based\nCruelty-free\nNo plastic beads"
       }
+    },
+    "1661367457fba809f1": {
+      "type": "apps",
+      "blocks": {
+        "983ecf5d-34bf-4182-afbd-4008f89231f1": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "983ecf5d-34bf-4182-afbd-4008f89231f1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1661367457fba809f1"
   ]
 }
