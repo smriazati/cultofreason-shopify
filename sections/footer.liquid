@@ -1,0 +1,94 @@
+<footer>
+  <div class="flex-row flex-full">
+    <div class="flex-row">
+      <div>
+        <nav>
+          <ul>
+            {% for link in linklists.footer.links %}
+                <li class="menu-link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <nav>
+        <ul>
+          {% for link in linklists.footer-menu-2.links %}
+              <li class="menu-link">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+          {% endfor %}
+        </ul>
+        </nav>
+      </div>
+      <div>
+        <nav>
+          <ul>
+            {% for link in linklists.footer-menu-3.links %}
+                <li class="menu-link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <nav>
+          <ul>
+            {% for link in linklists.footer-menu-4.links %}
+                <li class="menu-link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div>
+      <div>
+          {%- if section.settings.newsletter_heading != blank -%}
+              <h2>{{ section.settings.newsletter_heading | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.newsletter_text != blank -%}
+          <h2>{{ section.settings.newsletter_text | escape }}</h2>
+          {%- endif -%}
+      </div>
+      {%- render 'newsletter-signup' -%}    
+    </div>
+  </div>
+
+  <div class="flex-row flex-full">
+    <div class="flex-row">
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: '/', class: 'link-plain' }}</p>
+        <p><a href="https://otherlove.co" class="link-plain">Made with Otherlove</a></p>
+    </div>
+
+    <div>
+      <button aria-label="Back to top" onClick="scrollToTop()">{%- render 'icon-arrow-up' -%}</button>
+    </div>
+  </div>
+</footer>
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "default": "Newsletter",
+      "label": "Newsletter Heading"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "default": "Join for 10% off your first purchase.",
+      "label": "Newsletter Text"
+    }
+  ]
+}
+{% endschema %}

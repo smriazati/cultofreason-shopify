@@ -1,0 +1,34 @@
+
+<div class="product-grid-container" id="ProductGridContainer">
+    {%- paginate collection.products by 6 -%}
+        {%- if collection.products.size == 0 -%}
+            <p>This collection is empty</p>
+        {%- else -%}
+            <div>
+            <ul id="product-grid">
+                {%- for product in collection.products -%}
+                <li class="grid__item">
+                    {{ product.title }}
+                    {%- if product.available == false -%}
+                        <p>Sold out</p>
+                    {%- endif -%}
+                    {% if product.compare_at_price_max > product.price %}
+                        <p>On sale</p>
+                    {%- endif -%}
+                    <img
+                        src="{{ product.featured_media | image_url: width: 533 }}"
+                        alt="{{ product.featured_media.alt | escape }}"
+                        loading="lazy"
+                        width="{{ product.featured_media.width }}"
+                        height="{{ product.featured_media.height }}"
+                      >
+                </li>
+                {%- endfor -%}
+            </ul>
+
+
+            </div>
+        {%- endif -%}
+    {%- endpaginate -%}
+</div>
+

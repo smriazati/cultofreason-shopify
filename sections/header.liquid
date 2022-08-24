@@ -1,0 +1,58 @@
+<header class="site-header flex-row flex-full">
+    <div class="left-col flex-col flex-center">
+        <nav>
+            <ul class="flex-row">
+                {% for link in linklists.main-menu.links %}
+                    <li class="menu-link">
+                        <a href="{{ link.url }}" class="link-plain">{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    <div class="center-col">
+        <a href="/" class="flex-row flex-center">
+            <img src="{{ 'images_logo.svg' | asset_url }}" loading="lazy" width=374 height=56>
+        </a>
+    </div>
+    <div class="right-col flex-col flex-center flex-align-end">
+        <nav>
+            <ul class="flex-row">
+                <li>
+                    <button
+                        aria-label="Open cart drawer">
+                        Cart ({{ cart.item_count }})
+                      </button>
+                </li>
+                <li>
+                    <a href="/account" class="link-plain">Account</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+{%- style -%}
+.site-header {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #AEB4B7;
+}
+.site-header .left-col,
+.site-header .right-col, {
+    flex: 25%;
+}
+.site-header .center-col {
+    flex: 50%;
+}
+.site-header .left-col li:not(:last-child),
+.site-header .right-col li:not(:last-child) {
+    margin-right: 40px;
+}
+.site-header nav li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+{%- endstyle -%}

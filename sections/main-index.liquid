@@ -1,0 +1,68 @@
+<div class="page-container">
+  <h1 class="h1 text-center">{{ section.settings.heading }}</h1>
+  <h2 class="large-text text-center">{{ section.settings.text }}</h2>
+
+  <div class="bottom-button bg-dark">
+    <a href="/shop" class="flex-row link-plain">
+        {%- for item in (1..3) -%}
+            <img src="{{ 'images_mark.svg' | asset_url }}" loading="lazy" width=18 height=18 class="filter-invert">
+            <p class="h3 nowrap">{{ section.settings.text2 }}</p>
+            <p class="h3 nowrap">Shop now </p>
+        {%- endfor -%}
+    </a>
+  </div>
+</div>
+
+{%- render 'dark-mode-styles' -%}
+
+{%- style -%}
+.bottom-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.bottom-button a > *:not(last-child) {
+    margin-right: 10px;
+}
+{%- endstyle -%}
+<style>
+.site-main {
+    background: url({{ section.settings.bg_img | image_url }}) no-repeat fixed center center;
+    background-size: cover;
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Home page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Clean, simple, effective esthetician-formulated skincare.",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "default": "Meet your skin’s new best friends.",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "default": "Always plant-based, vegan, cruelty-free, and made in the USA",
+      "label": "Bottom Text"
+    }
+  ]
+}
+{% endschema %}
