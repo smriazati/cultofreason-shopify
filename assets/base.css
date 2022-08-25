@@ -58,12 +58,16 @@ body {
 
 a {
     color: inherit;
+}
+
+a:not(.link-underline) {
     text-decoration: none;
 }
 
 a:not(.link-plain) {
     color: var(--link-text-color);
 }
+
 
 p ul {
     padding-left: 15px;
@@ -314,6 +318,10 @@ button:hover,
 .bg-dark {
     background: var(--volcano);
     color: white;
+}
+
+.bg-sulfur {
+    background: var(--sulfur);
 }
 
 .bg-light {

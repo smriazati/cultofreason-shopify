@@ -1,8 +1,70 @@
-<div class="page-container">
-  <h1 class="h1 text-center mb-54">
-    {{ page.title | escape }}
-  </h1>
-  <div class="text text-max-width text-center">
+<div class="page-container main-page main-page-{{ page.handle }} page-vert-padding">
+  {% if page.title != 'About' %}
+    <h1 class="h1 text-center mb-54">
+      {{ page.title | escape }}
+    </h1>
+  {% endif %}
+  {% if page.title == 'About' %}
+    <div class="fixed-corner-btn bg-sulfur">
+      <a href="/page/ingredients" class="link-plain bg-sulfur link-underline"><span>Discover Ingredients</span></a>
+    </div>
+  {% endif %}
+  <div class="page-content text text-max-width text-center">
     {{ page.content }}
   </div>
 </div>
+
+{% style %}
+.main-page {
+  padding: 200px 0;
+}
+.main-page .page-content h1 {
+  font-family: 'Editorial New', serif;
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 66px;
+  margin-bottom: 54px;
+}
+.main-page .page-content h2 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+}
+
+.main-page .page-content p {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.main-page-about .page-content p + h1 {
+  margin-top: 25vh;
+}
+.main-page-about .page-content p + h2 {
+  margin-top: 96px;
+}
+
+.fixed-corner-btn {
+  position: fixed;
+  z-index: 111;
+  bottom: 0;
+  right: 0;
+  width: 240px;
+  height: 240px;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+.fixed-corner-btn a {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 61px 35px;
+}
+.fixed-corner-btn a span {
+  max-width: 80px;
+}
+{% endstyle %}
