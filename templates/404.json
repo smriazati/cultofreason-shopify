@@ -3,6 +3,8 @@
     "main": {
       "type": "main-404",
       "settings": {
+        "bg_img": "shopify:\/\/shop_images\/dalal-nizam-qKBQCMTWS9o-unsplash_1.jpg",
+        "text": "You’ve lost your way. Let’s get back on track."
       }
     }
   },
