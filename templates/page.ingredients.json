@@ -1,10 +1,18 @@
 {
     "sections": {
         "main": {
-            "type": "main-ingredients-page"
+            "type": "main-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "form": {
+            "type": "ingredients-list"
         }
     },
     "order": [
-        "main"
+        "main",
+        "ingredients-list"
     ]
 }
