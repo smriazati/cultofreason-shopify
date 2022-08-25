@@ -35,14 +35,7 @@
               {%- endif -%}
             </div>
           </div>
-          {%- if settings.cart_drawer_collection != blank -%}
-            <div class="cart-drawer__collection">
-              {% render 'card-collection',
-                card_collection: settings.cart_drawer_collection,
-                columns: 1
-              %}
-            </div>
-          {%- endif -%}
+         
         </div>
       {%- endif -%}
       <div class="drawer__header">
@@ -145,7 +138,6 @@
                           <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                             {%- for discount in item.discounts -%}
                               <li class="discounts__discount">
-                                {%- render 'icon-discount' -%}
                                 {{ discount.title }}
                               </li>
                             {%- endfor -%}
@@ -255,7 +247,6 @@
             <summary>
               <span class="summary__title">
                 {{ 'sections.cart.note' | t }}
-                {% render 'icon-caret' %}
               </span>
             </summary>
             <cart-note class="cart__note field">
@@ -279,7 +270,6 @@
               <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                 {%- for discount in cart.cart_level_discount_applications -%}
                   <li class="discounts__discount discounts__discount--end">
-                    {%- render 'icon-discount' -%}
                     {{ discount.title }}
                     (-{{ discount.total_allocated_amount | money }})
                   </li>

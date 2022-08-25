@@ -1,13 +1,10 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <div class="customer login">
-  <h1 id="recover" tabindex="-1">
+  <h1 class="h1 mb-24" id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
   </h1>
   <div>
-    <p>
-      {{ 'customer.recover_password.subtext' | t }}
-    </p>
 
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
@@ -42,17 +39,17 @@
         </small>
       {%- endif -%}
 
-      <button>
+      <button class="btn-square">
         {{ 'customer.login_page.submit' | t }}
       </button>
 
-      <a href="#login">
+      <a href="#login" class="link-inline">
         {{ 'customer.login_page.cancel' | t }}
       </a>
     {%- endform -%}
   </div>
 
-  <h1 id="login" tabindex="-1">
+  <h1 class="h1 mb-24" id="login" tabindex="-1">
     {{ 'customer.login_page.title' | t }}
   </h1>
   <div>
@@ -122,11 +119,11 @@
         </a>
       {%- endif -%}
 
-      <button>
+      <button class="btn-square">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
-      <a href="{{ routes.account_register_url }}">
+      <a href="{{ routes.account_register_url }}" class="link-inline">
         {{ 'customer.login_page.create_account' | t }}
       </a>
       
@@ -139,7 +136,7 @@
       <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
 
       {%- form 'guest_login' -%}
-        <button>
+        <button class="btn-square">
           {{ 'customer.login_page.guest_continue' | t }}
         </button>
       {%- endform -%}

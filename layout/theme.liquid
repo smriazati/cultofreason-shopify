@@ -71,9 +71,19 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
   </script>
-</head>
 
-<body>
+    {% comment %}
+  barba.js
+  {% endcomment %}
+  {% if request.page_type != 'collection' and request.page_type != 'product' and request.page_type != 'cart' %}
+    <script src="https://cdn.jsdelivr.net/npm/gsap" defer="defer"></script>
+    <script src="https://unpkg.com/@barba/core" defer="defer"></script>
+    <script src="{{ 'barba_init.js' | asset_url }}" defer="defer"></script>
+   {{ 'barba.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+
+</head>
+<body class="{{ template.name }} template-{{ request.page_type | handle }}">
   <a class="visually-hidden" href="#MainContent">
     Skip to text
   </a>
@@ -82,13 +92,13 @@
 
   {% section 'header' %}
 
-  <main id="MainContent" class="content-for-layout focus-none site-main flex-col flex-center" role="main" tabindex="-1">
-    {{ content_for_layout }}
-  </main>
+  <div data-barba="wrapper" class="barba-wrapper">
+    <main id="MainContent" class="content-for-layout focus-none site-main flex-col flex-center" role="main" tabindex="-1" data-barba="container" data-barba-namespace="{{ template | remove: 'page.' }}" >
+      {{ content_for_layout }}
+    </main>
+  </div>
 
-  {%- if template.name != "index" -%}
-    {% section 'footer' %}
-  {%- endif -%}
+  {% section 'footer' %}
 
   <ul hidden>
     <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

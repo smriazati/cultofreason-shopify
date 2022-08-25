@@ -1,0 +1,9 @@
+.barba-wrapper {
+    flex: 2;
+    display: flex;
+}
+
+#shopify-section-header {
+    position: relative;
+    z-index: 100;
+}

@@ -614,3 +614,7 @@ input::placeholder {
 .main-page-padding {
     padding: 200px 0;
 }
+
+label {
+    display: none;
+}

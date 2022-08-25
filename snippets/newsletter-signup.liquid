@@ -16,7 +16,7 @@
         </button>
       </div>
       {%- if form.errors -%}
-          <small id="ContactFooter-error">{{form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          <small id="ContactFooter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
       {%- endif -%}
     </div>
     {%- if form.posted_successfully? -%}
