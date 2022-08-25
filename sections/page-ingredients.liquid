@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="page-container main-page-padding">
   <h1 class="h1 text-center mb-54">
     {{ page.title | escape }}
   </h1>
@@ -9,26 +9,64 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'ingredient' %}
-          <div class="ingredient" {{ block.shopify_attributes }}>
-            <h2>{{ block.settings.title }}</h2>
-            <p>{{ block.settings.description }}</p>
-            {% if block.settings.product1 != blank or block.settings.product2 != blank or  block.settings.product3 != blank  %}
-              <h3>Used in</h3>
-              {% if block.settings.product1 != blank %}
-                <a href="/products/{{ block.settings.product1.handle }}">{{ block.settings.product1.title }}</a>
+          <div class="ingredient-item" {{ block.shopify_attributes }}>
+            <div>
+              <h2 class="h2 mb-24">{{ block.settings.title }}</h2>
+              <p class="text mb-8">{{ block.settings.description }}</p>
+            </div>
+            <div>
+              {% if block.settings.product1 != blank or block.settings.product2 != blank or  block.settings.product3 != blank %}
+                <h3 class="text-16-bold mb-8">Used in</h3>
+                {% if block.settings.product1 != blank %}
+                  <a class="link-inline" href="/products/{{ block.settings.product1.handle }}">{{ block.settings.product1.title }}</a>
+                {% endif %}
+                {% if block.settings.product2 != blank %}
+                  <a class="link-inline" href="/products/{{ block.settings.product2.handle }}">{{ block.settings.product2.title }}</a>
+                {% endif %}
+                {% if block.settings.product3 != blank %}
+                  <a class="link-inline" href="/products/{{ block.settings.product3.handle }}">{{ block.settings.product3.title }}</a>
+                {% endif %}
               {% endif %}
-              {% if block.settings.product2 != blank %}
-                <a href="/products/{{ block.settings.product2.handle }}">{{ block.settings.product2.title }}</a>
-              {% endif %}
-              {% if block.settings.product3 != blank %}
-                <a href="/products/{{ block.settings.product3.handle }}">{{ block.settings.product3.title }}</a>
-              {% endif %}
-            {% endif %}
+            </div>
           </div>
       {% endcase %}
     {% endfor %}
     </div>
 </div>
+
+{% style %}
+.ingredients-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(476px, auto);
+  width: 100%;
+  border-left: 1px solid #1B1D1E;
+  border-top: 1px solid #1B1D1E;
+  margin-top: 146px;
+}
+
+
+.ingredients-list .ingredient-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #1B1D1E;
+  background: #fff;
+  transition: .3s ease all;
+  padding: 40px;
+}
+
+.ingredients-list .ingredient-item:hover {
+  background: #EEF580;
+}
+
+.ingredients-list .ingredient-item {
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+{% endstyle %}
 
 {% schema %}
 {

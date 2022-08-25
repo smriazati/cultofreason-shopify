@@ -1,4 +1,4 @@
-<div class="page-container main-page main-page-{{ page.handle }} page-vert-padding">
+<div class="page-container main-page main-page-padding main-page-{{ page.handle }} page-vert-padding">
   {% if page.title != 'About' %}
     <h1 class="h1 text-center mb-54">
       {{ page.title | escape }}
@@ -15,9 +15,7 @@
 </div>
 
 {% style %}
-.main-page {
-  padding: 200px 0;
-}
+
 .main-page .page-content h1 {
   font-family: 'Editorial New', serif;
   font-size: 60px;
