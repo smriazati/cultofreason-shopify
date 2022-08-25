@@ -1,21 +1,24 @@
 {
-    "sections": {
-        "product-hero": {
-            "type": "product-hero",
-            "settings": {}
-        },
-        "product-js": {
-            "type": "product-js",
-            "settings": {}
-        },
-        "add_to_cart": {
-            "type": "product-add-to-cart",
-            "settings": {}
-        }
+  "sections": {
+    "product-hero": {
+      "type": "product-hero",
+      "settings": {
+      }
     },
-    "order": [
-        "product-hero",
-        "product-js",
-        "add_to_cart"
-    ]
+    "product-js": {
+      "type": "product-js",
+      "settings": {
+      }
+    },
+    "add_to_cart": {
+      "type": "product-add-to-cart",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-hero",
+    "product-js",
+    "add_to_cart"
+  ]
 }
