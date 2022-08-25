@@ -33,11 +33,6 @@
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   {{ content_for_header }}
 
-  {%- liquid
-  assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-  assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-  assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-  %}
 
   {% style %}
 
@@ -70,7 +65,7 @@
   {% endstyle %}
 
   {{ 'base.css' | asset_url | stylesheet_tag }}
-
+  
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     if (Shopify.designMode) {
       document.documentElement.classList.add('shopify-design-mode');
@@ -83,9 +78,7 @@
     Skip to text
   </a>
 
-  {%- if settings.cart_type == 'drawer' -%}
   {%- render 'cart-drawer' -%}
-  {%- endif -%}
 
   {% section 'header' %}
 
@@ -113,8 +106,8 @@
     };
 
     window.cartStrings = {
-      error: `{{ 'sections.cart.cart_error' | t }}`,
-      quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+      error: `There was an error while updating your cart. Please try again`,
+      quantityError: `You can only add [quantity] of this item to your cart.`
     }
 
     window.variantStrings = {
@@ -131,6 +124,7 @@
     }
   </script>
 
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 
 </body>
 

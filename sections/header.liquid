@@ -1,3 +1,22 @@
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print"
+  onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+
 <header class="site-header flex-row flex-full">
     <div class="left-col flex-col flex-center">
         <nav>
@@ -20,9 +39,11 @@
             <ul class="flex-row">
                 <li>
                     <button
-                        aria-label="Open cart drawer">
-                        Cart ({{ cart.item_count }})
-                      </button>
+                        aria-label="Open cart drawer"
+                        id="cart-icon-bubble"
+                    >
+                        {{ 'templates.cart.cart' | t }} ({{ cart.item_count }})
+                    </button>
                 </li>
                 <li>
                     <a href="/account" class="link-plain">Account</a>

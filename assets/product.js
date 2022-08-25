@@ -5,6 +5,8 @@ function productFunctions () {
     initAccordion();
 }
 
+
+
 function moveProductReviewStars() {
     const starsEl = document.querySelector('.spr-starrating .spr-stars');
     const starsDestEl = document.getElementById('customProductReviewsStars')
