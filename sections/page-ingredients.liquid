@@ -1,0 +1,71 @@
+<div class="page-container">
+  <h1 class="h1 text-center mb-54">
+    {{ page.title | escape }}
+  </h1>
+  <div class="text text-max-width text-center">
+    {{ page.content }}
+  </div>
+  <div class="ingredients-list">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'ingredient' %}
+          <div class="ingredient" {{ block.shopify_attributes }}>
+            <h2>{{ block.settings.title }}</h2>
+            <p>{{ block.settings.description }}</p>
+            {% if block.settings.product1 != blank or block.settings.product2 != blank or  block.settings.product3 != blank  %}
+              <h3>Used in</h3>
+              {% if block.settings.product1 != blank %}
+                <a href="/products/{{ block.settings.product1.handle }}">{{ block.settings.product1.title }}</a>
+              {% endif %}
+              {% if block.settings.product2 != blank %}
+                <a href="/products/{{ block.settings.product2.handle }}">{{ block.settings.product2.title }}</a>
+              {% endif %}
+              {% if block.settings.product3 != blank %}
+                <a href="/products/{{ block.settings.product3.handle }}">{{ block.settings.product3.title }}</a>
+              {% endif %}
+            {% endif %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "blocks": [
+    {
+      "name": "Ingredient",
+      "type": "ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "product",
+          "id": "product1",
+          "label": "Linked Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product2",
+          "label": "Linked Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product3",
+          "label": "Linked Product 3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

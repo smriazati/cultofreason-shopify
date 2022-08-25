@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-ingredients",
+      "blocks": {
+        "b1b649c9-f20a-4c67-9dba-5fad87fdafc8": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Sulfur",
+            "description": "Underutilized powerhouse ingredient that treats acne, pore congestion, psoriasis, rosacea, eczema and more. Kills bacteria and gently exfoliates. A building block of our bodies, it’s well tolerated by most skin. (We promise you won’t get the “typical” sulfur smell thanks to yummy essential oils in our formula.)",
+            "product1": "grit",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "a99b4518-f86b-49de-aa97-fe4943cb56e9": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Salicylic Acid",
+            "description": "One of the best known ingredients for acne. Gets its stellar reputation due to molecules that are small enough to actually get inside pores to exfoliate and clear congestion.",
+            "product1": "grit",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "7433e5de-3ca3-4914-810c-ff62185c2c8c": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Jojoba Esters (Beads)",
+            "description": "Made from hardened jojoba seed oil, these beads are soft, round gentle exfoliators. Better still, jojoba oil is structurally close to sebum (the natural oil secreted by sebaceous glands) so it can reduce oiliness. No plastic beads or harsh walnut shell powder around here!",
+            "product1": "grit",
+            "product2": "",
+            "product3": ""
+          }
+        }
+      },
+      "block_order": [
+        "b1b649c9-f20a-4c67-9dba-5fad87fdafc8",
+        "a99b4518-f86b-49de-aa97-fe4943cb56e9",
+        "7433e5de-3ca3-4914-810c-ff62185c2c8c"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
