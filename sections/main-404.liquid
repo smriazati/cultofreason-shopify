@@ -10,24 +10,33 @@
   </div>
 </div>
 
+{% if section.settings.darkMode %}
+  {%- render 'dark-mode-styles' -%}
+{% endif %}
 
-{%- render 'dark-mode-styles' -%%}
-
-<style>
-  .site-main {
-    background: url({{ section.settings.bg_img | image_url }}) no-repeat fixed center center;
-    background-size: cover;
-  }
-</style>
+{% if section.settings.bg_img != blank %}
+  <style>
+    .site-main {
+      background: url({{ section.settings.bg_img | image_url }}) no-repeat fixed center center;
+      background-size: cover;
+    }
+  </style>
+{% endif %}
 
 {% schema %}
 {
   "name": "404",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "darkMode",
+      "default": true,
+      "label": "Dark mode?"
+    },
+    {
       "type": "image_picker",
       "id": "bg_img",
-      "label": "Background Image"
+      "label": "Background image"
     },
     {
       "type": "text",
