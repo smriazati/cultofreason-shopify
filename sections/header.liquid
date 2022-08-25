@@ -46,7 +46,10 @@
                     </button>
                 </li>
                 <li>
-                    <a href="/account" class="link-plain">Account</a>
+                    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                        class="link-plain">
+                        Account
+                      </a>
                 </li>
             </ul>
         </nav>
