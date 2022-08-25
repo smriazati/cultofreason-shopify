@@ -1,5 +1,87 @@
-ingredients!!
+<div id="ingredientsList"></div>
 
-get the All collection 
-loop through all products and get the tags
-make a list of tag names
+make an ingredients block for this page, ingredient can include link to product, description and title 
+
+
+<script>
+    let ingredientsList = [];
+    {% for product in collections['all'].products %}
+        {% comment %} tags.push({{ product.tags | json }}) {% endcomment %}
+        {% for tag in product.tags %}
+            var tagName = {{ tag | json | replace: 'ingredient-', '' }}
+            var productHandle = {{ product.handle | json }};
+            // does tagname exist in list? 
+            var tagIndex;
+            var doesTagExist;
+
+            if (ingredientsList.length > 0) {
+                doesTagExist = ingredientsList.find((o, i) => {
+                    {% comment %} console.log(o.name, tagName, o, i) {% endcomment %}
+                    if (o.name === tagName) {
+                        {% comment %} console.log('this one is a match!') {% endcomment %}
+                        tagIndex = i;
+                        return true;
+                    }
+                })
+            }
+            {% comment %} console.log('doesTagExistInList?', tagIndex) {% endcomment %}
+            if (tagIndex != undefined) {
+                {% comment %} console.log('adding', productHandle, 'to', tagIndex) {% endcomment %}
+                var currentList = ingredientsList[tagIndex].products.slice();;
+                var newList = currentList.push(productHandle);
+                ingredientsList[tagIndex].products = currentList;
+            } else {
+                var obj = {
+                    "name": tagName,
+                    "products": [productHandle]
+                }
+                ingredientsList.push(obj);
+            }
+            tagIndex = undefined;
+            doesTagExist = undefined;
+        {% endfor %}
+    {% endfor %}
+
+    {% comment %} console.log(ingredientsList); {% endcomment %}
+    const destEl = document.getElementById('ingredientsList');
+    if (destEl) {
+        ingredientsList.forEach( (ingredient, i) => {
+            constructIngredientLayout(ingredient);
+        })
+    }
+
+    
+
+    function constructIngredientLayout(ingredient) {
+        var parentDiv = document.createElement('div');
+        parentDiv.classList.add('card-wrapper');
+
+        var titleDiv = document.createElement('div');
+        titleDiv.classList.add('title-wrapper');
+        titleDiv.innerHTML = ingredient.name;
+
+        var usedInDiv = document.createElement('div');
+        usedInDiv.classList.add('used-in-wrapper');
+        usedInDiv.innerHTML = 'Used In';
+
+        var productsDiv = document.createElement('div');
+        productsDiv.classList.add('products-list-wrapper');
+        ingredient.products.forEach(product => {
+            var productLink = document.createElement('a');
+            productLink.setAttribute('href', `/products/${product}`)
+            productLink.innerHTML = product
+            productsDiv.appendChild(productLink);
+        })
+
+        parentDiv.appendChild(titleDiv);
+        parentDiv.appendChild(usedInDiv);
+        parentDiv.appendChild(productsDiv);
+
+        destEl.appendChild(parentDiv);
+    }
+
+</script>
+
+
+
+
