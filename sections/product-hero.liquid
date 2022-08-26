@@ -1,14 +1,24 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="{{ 'swiper_init.js' | asset_url }}" defer="defer"></script>
+{{ 'swiper_custom.css' | asset_url | stylesheet_tag }}
+
 <div class="main-product page-container page-container-mb-full">
     <div class="hero-wrapper">
         <div class="gallery-wrapper">
-            {%- assign image_count = 0 -%}
-            <div class="gallery-images">
-                {%- for img in product.images -%}
-                    <div class="gallery-image-wrapper">
-                        <img src="{{ img.src | image_url }}" alt="{{ img.alt }}" loading="lazy" width=716 height class="" />
-                    </div>
-                    {%- assign image_count = image_count | plus: 1 -%}
-                {%- endfor -%}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {%- for img in product.images -%}
+                        <div class="swiper-slide">
+                            <img src="{{ img.src | image_url }}" alt="{{ img.alt }}" loading="lazy" width=716 height class="" />
+                        </div>
+                    {%- endfor -%}
+                </div>
+                <div class="swiper-controls">
+                    <div class="current"><span id="slide-count-el"></span> / {{ product.images.size }}</div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>         
+                </div>             
             </div>
             <div class="gallery-controls">
                 {{ image_count }}
@@ -84,11 +94,13 @@
 .main-product .hero-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: calc(100vh - 78px - 96px);
 }
-.main-product .hero-wrapper .gallery-wrapper {
+/* .main-product .hero-wrapper .gallery-wrapper {
     width: 100%;
+    height: 100vh;
     max-height: 100vh;
+    overflow: hidden;
 }
 
 .main-product .hero-wrapper .gallery-wrapper .gallery-images {
@@ -105,13 +117,13 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
+*/
 
 .main-product .gallery-wrapper img {
     max-width: 100%;
     min-height: 100%;
     object-fit: cover;
-}
-
+} 
 
 .main-product .text-wrapper {
     padding: 32px 80px;
