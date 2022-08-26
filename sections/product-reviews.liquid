@@ -1,0 +1,8 @@
+{{ 'judgeme_custom.css' | asset_url | stylesheet_tag }}
+
+<div class="reviews-wrapper mb-54">
+    <h2 class="text-big-bold text-upper text-center">Reviews</h2>
+    <div>
+        {% render 'judgeme_widgets', widget_type: 'judgeme_featured_carousel', concierge_install: false %}
+    </div>
+</div>

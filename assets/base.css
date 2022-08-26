@@ -202,6 +202,18 @@ p {
     line-height: 17px;
 }
 
+.text-big-bold {
+    font-family: var(--sans-serif);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 63px;
+}
+
+.text-upper {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 .detail {
     font-family: var(--sans-serif);
     font-size: 14px;
