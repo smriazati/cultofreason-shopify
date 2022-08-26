@@ -82,6 +82,7 @@
    {{ 'barba.css' | asset_url | stylesheet_tag }}
   {% endif %}
 
+  {% render 'judgeme_core' %}
 </head>
 <body class="template-{{ request.page_type | handle }}">
   <div class="{{ template.suffix }} body-wrapper">
