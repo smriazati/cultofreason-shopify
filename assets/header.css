@@ -1,0 +1,127 @@
+.site-header {
+    overflow: hidden;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #AEB4B7;
+}
+
+.site-header .left-col,
+.site-header .right-col {
+    flex: 25%;
+}
+
+.site-header .left-col li:not(:last-child),
+.site-header .right-col li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.site-header .center-col {
+    flex: 50%;
+}
+
+@media (min-width: 801px) {
+    .site-header.site-header-touch-screen {
+        display: none;
+    }
+
+    .site-header nav li {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 800px) {
+    .site-header.site-header-lg-screen {
+        display: none;
+    }
+
+    .site-header .mobile-menu-wrapper {
+        background: #1B1D1E;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        padding: 20px;
+    }
+
+    .site-header .mobile-menu-wrapper button,
+    .site-header .mobile-menu-wrapper a {
+        color: #fff;
+    }
+
+    .site-header .mobile-menu-wrapper .brand {
+        filter: invert(1);
+    }
+
+    .site-header .mobile-menu-wrapper>* {
+        position: relative;
+        z-index: 11;
+    }
+
+    .site-header .mobile-menu-wrapper .mobile-menu-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .site-header .mobile-menu-wrapper .mobile-menu-bg>img {
+        max-height: 300px;
+        min-width: 100%;
+        object-fit: cover;
+    }
+
+
+    .site-header .menu-wrapper nav li a:hover {
+        color: #EEF580;
+    }
+
+    .site-header .menu-wrapper nav:first-child li a {
+        font-family: 'Editorial New', serif;
+        font-size: 60px;
+        font-weight: 200;
+        line-height: 72px;
+        padding: 6px 0;
+        display: flex;
+    }
+
+    .site-header .menu-wrapper nav:last-child li a {
+        padding: 8px 0;
+    }
+
+    /* animations */
+    .site-header .mobile-menu-wrapper {
+        transition: .3s ease-out transform;
+    }
+
+    .site-header.collapsed .mobile-menu-wrapper {
+        transform: translateX(-100%);
+    }
+
+    .site-header.expanded .mobile-menu-wrapper {
+        transform: translateX(0%);
+    }
+
+    .site-header .mobile-menu-bg {
+        transition: .7s ease-out all;
+    }
+
+    .site-header.collapsed .mobile-menu-bg {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .site-header.expanded .mobile-menu-bg {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

@@ -1,5 +1,6 @@
 {
   "current": {
+    "mobile_menu_img": "shopify:\/\/shop_images\/mobile-menu-bg.png",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
@@ -103,6 +104,17 @@
       "header": {
         "type": "header",
         "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "newsletter_heading": "Newsletter",
+          "newsletter_text": "Join for 10% off your first purchase.",
+          "menu_title_1": "Shop",
+          "menu_title_2": "About",
+          "menu_title_3": "Info",
+          "menu_title_4": "Connect"
         }
       }
     },

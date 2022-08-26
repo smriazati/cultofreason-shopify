@@ -6,5 +6,16 @@
     "theme_author": "Otherlove",
     "theme_documentation_url": "https:\/\/otherlove.co",
     "theme_support_url": "https:\/\/otherlove.co"
+  },
+  {
+    "name": "Site Images",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "mobile_menu_img",
+        "label": "Mobile menu background image",
+        "info": "Upload a PNG file"
+      }
+    ]
   }
 ]

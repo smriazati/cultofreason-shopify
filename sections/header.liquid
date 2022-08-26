@@ -1,23 +1,40 @@
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print"
-  onload="this.media='all'">
+{% comment %} <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print"
+  onload="this.media='all'"> {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
 {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script> 
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 
-<header class="site-header flex-row flex-full">
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<script>
+
+function toggleMobileMenu() {
+    const header = document.getElementById('smHeader');
+    if (!header) { return }
+    if (header.classList.contains('collapsed')) {
+        header.classList.remove('collapsed');
+        header.classList.add('expanded')
+    } else {
+        header.classList.remove('expanded')
+        header.classList.add('collapsed');
+    }
+}
+</script>
+
+<header id="lgHeader" class="site-header site-header-lg-screen flex-row flex-full">
     <div class="left-col flex-col flex-center">
         <nav>
             <ul class="flex-row">
@@ -31,7 +48,7 @@
     </div>
     <div class="center-col">
         <a href="/" class="flex-row flex-center">
-            <img src="{{ 'images_logo.svg' | asset_url }}" loading="lazy" width=374 height=56>
+            <img src="{{ 'images_logo.svg' | asset_url }}" width=374 height=56 loading="lazy" class="brand">
         </a>
     </div>
     <div class="right-col flex-col flex-center flex-align-end">
@@ -56,27 +73,68 @@
     </div>
 </header>
 
-{%- style -%}
-.site-header {
-    position: absolute;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #AEB4B7;
-}
-.site-header .left-col,
-.site-header .right-col, {
-    flex: 25%;
-}
-.site-header .center-col {
-    flex: 50%;
-}
-.site-header .left-col li:not(:last-child),
-.site-header .right-col li:not(:last-child) {
-    margin-right: 40px;
-}
-.site-header nav li {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-}
-{%- endstyle -%}
+<header id="smHeader" class="site-header site-header-touch-screen collapsed">
+    <div class="flex-row">
+        <div class="left-col flex-col flex-center">
+            <button onclick="toggleMobileMenu()" aria-role="openMobileMenu">Menu</button>
+        </div>
+        <div class="center-col">
+            <a href="/" class="flex-row flex-center">
+                <img src="{{ 'images_logo.svg' | asset_url }}" loading="lazy" width=374 height=56 class="brand">
+            </a>
+        </div>
+        <div class="right-col flex-col flex-center flex-align-end">
+            <nav>
+                <ul class="flex-row">
+                    <li>
+                        <button
+                            aria-label="Open cart drawer"
+                            id="cart-icon-bubble"
+                        >
+                            <span class="label">{{ 'templates.cart.cart' | t }}</span> <span class="count">({{ cart.item_count }})</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>   
+    </div>
+
+    <div class="flex-col mobile-menu-wrapper" id="mobileMenu">
+        {% if settings.mobile_menu_img != blank %}
+            <div class="mobile-menu-bg">
+                <img src="{{ settings.mobile_menu_img | image_url }}" alt="{{ settings.mobile_menu_img.alt }}" width height loading="lazy" >
+            </div>
+        {% endif %}
+        <div class="flex-row">
+            <div class="left-col">
+                <button onclick="toggleMobileMenu()">Close</button>
+            </div>
+            <div class="center-col">
+                <a href="/" class="flex-row flex-center">
+                    <img src="{{ 'images_mark.svg' | asset_url }}" loading="lazy" width=80 height=80 class="brand">
+                </a>
+            </div>
+        </div>
+        <div class="flex-col menu-wrapper">
+            <nav>
+                <ul class="flex-col">
+                    {% for link in linklists.mobile-menu-main.links %}
+                        <li class="menu-link">
+                            <a href="{{ link.url }}" class="link-plain">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <nav>
+                <ul class="flex-col">
+                    {% for link in linklists.mobile-menu-secondary.links %}
+                        <li class="menu-link">
+                            <a class="h3" href="{{ link.url }}" class="link-plain">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
