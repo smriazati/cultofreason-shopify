@@ -14,14 +14,15 @@ function setBodyClass(next) {
     const body = document.querySelector('body');
     const nextNamespace = next.namespace;
 
-    const customPageTemplates = ['ingredients']; // add new page template handles here 
-    let templateName = nextNamespace;
+    const customPageTemplates = ['ingredients', 'contact']; // add new page template handles here 
+    let templateType = nextNamespace;
     if (customPageTemplates.includes(nextNamespace)) {
-        templateName = 'page';
+        templateType = 'page';
     }
 
     body.className = "";
-    body.classList.add(`template-${templateName}`)
+    body.classList.add(`template-${templateType}`)
+
 }
 
 function closeMobileMenu() {
