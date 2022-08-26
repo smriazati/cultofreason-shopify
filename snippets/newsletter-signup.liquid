@@ -16,10 +16,11 @@
         </button>
       </div>
       {%- if form.errors -%}
-          <small id="ContactFooter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          <small id="ContactFooter-error mt-8">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
       {%- endif -%}
     </div>
     {%- if form.posted_successfully? -%}
-      <h3 id="ContactFooter-success" tabindex="-1" autofocus>Thanks for signing up for the newsletter!</h3>
+      <h3 id="ContactFooter-success" class="mt-8 text" tabindex="-1" autofocus>Thanks for subscribing!</h3>
     {%- endif -%}
   {%- endform -%}
+
