@@ -104,11 +104,30 @@
         "type": "header",
         "settings": {
         }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "newsletter_heading": "Newsletter",
+          "newsletter_text": "Join for 10% off your first purchase.",
+          "menu_title_1": "Shop",
+          "menu_title_2": "About",
+          "menu_title_3": "Info",
+          "menu_title_4": "Connect"
+        }
       }
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
