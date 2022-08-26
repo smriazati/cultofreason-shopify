@@ -19,31 +19,20 @@
 
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<script>
-
-function toggleMobileMenu() {
-    const header = document.getElementById('smHeader');
-    if (!header) { return }
-    if (header.classList.contains('collapsed')) {
-        header.classList.remove('collapsed');
-        header.classList.add('expanded')
-    } else {
-        header.classList.remove('expanded')
-        header.classList.add('collapsed');
-    }
-}
-</script>
-
-<header id="lgHeader" class="site-header site-header-lg-screen flex-row flex-full">
-    <div class="left-col flex-col flex-center">
+<header id="siteHeader" class="site-header site-header-lg-screen flex-row flex-full collapsed">
+    <div class="left-col main-menu-wrapper flex-col flex-center">
         <nav>
             <ul class="flex-row">
                 {% for link in linklists.main-menu.links %}
-                    <li class="menu-link">
+                    <li class="menu-link hide-on-mobile">
                         <a href="{{ link.url }}" class="link-plain">{{ link.title }}</a>
                     </li>
                 {% endfor %}
+                <li class="hide-on-desktop">
+                    <button onclick="toggleMobileMenu()" aria-role="openMobileMenu">Menu</button>
+                </li>
             </ul>
+            
         </nav>
     </div>
     <div class="center-col">
@@ -59,59 +48,34 @@ function toggleMobileMenu() {
                         aria-label="Open cart drawer"
                         id="cart-icon-bubble"
                     >
-                        {{ 'templates.cart.cart' | t }} ({{ cart.item_count }})
+                        <span class="hide-on-mobile">{{ 'templates.cart.cart' | t }}</span> 
+                        <span>
+                        ({{ cart.item_count }})
+                        </span>
                     </button>
                 </li>
                 <li>
                     <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                        class="link-plain">
+                        class="link-plain hide-on-mobile">
                         Account
                       </a>
                 </li>
             </ul>
         </nav>
     </div>
-</header>
-
-<header id="smHeader" class="site-header site-header-touch-screen collapsed">
-    <div class="flex-row">
-        <div class="left-col flex-col flex-center">
-            <button onclick="toggleMobileMenu()" aria-role="openMobileMenu">Menu</button>
-        </div>
-        <div class="center-col">
-            <a href="/" class="flex-row flex-center">
-                <img src="{{ 'images_logo.svg' | asset_url }}" loading="lazy" width=374 height=56 class="brand">
-            </a>
-        </div>
-        <div class="right-col flex-col flex-center flex-align-end">
-            <nav>
-                <ul class="flex-row">
-                    <li>
-                        <button
-                            aria-label="Open cart drawer"
-                            id="cart-icon-bubble"
-                        >
-                            <span class="label">{{ 'templates.cart.cart' | t }}</span> <span class="count">({{ cart.item_count }})</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>   
-    </div>
-
-    <div class="flex-col mobile-menu-wrapper" id="mobileMenu">
+    <div class="flex-col mobile-menu-wrapper hide-on-desktop" id="mobileMenu">
         {% if settings.mobile_menu_img != blank %}
             <div class="mobile-menu-bg">
                 <img src="{{ settings.mobile_menu_img | image_url }}" alt="{{ settings.mobile_menu_img.alt }}" width height loading="lazy" >
             </div>
         {% endif %}
         <div class="flex-row">
-            <div class="left-col">
-                <button onclick="toggleMobileMenu()">Close</button>
+            <div class="left-col flex-col flex-center flex-align-start">
+                <button onclick="toggleMobileMenu()" class="text-16">Close</button>
             </div>
             <div class="center-col">
                 <a href="/" class="flex-row flex-center">
-                    <img src="{{ 'images_mark.svg' | asset_url }}" loading="lazy" width=80 height=80 class="brand">
+                    <img src="{{ 'images_mark.svg' | asset_url }}" loading="lazy" width=56 height=56 class="brand">
                 </a>
             </div>
         </div>
@@ -136,5 +100,4 @@ function toggleMobileMenu() {
             </nav>
         </div>
     </div>
-
 </header>

@@ -2,6 +2,18 @@ function scrollToTop() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+function toggleMobileMenu() {
+  const header = document.getElementById('siteHeader');
+  if (!header) { return }
+  if (header.classList.contains('collapsed')) {
+    header.classList.remove('collapsed');
+    header.classList.add('expanded')
+  } else {
+    header.classList.remove('expanded')
+    header.classList.add('collapsed');
+  }
+}
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(

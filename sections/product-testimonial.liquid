@@ -24,8 +24,22 @@
     max-width: 845px;
     margin: 0 auto;
 }
-.testimonial-wrapper .testimonial-text-wrapper {
-    padding-left: 132px;
+
+@media (min-width: 801px) {
+    .testimonial-wrapper .testimonial-text-wrapper {
+        padding-left: 132px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .testimonial-content-wrapper {
+        flex-direction: column;
+    }
+    .testimonial-wrapper .testimonial-text-wrapper {
+        margin-top: 54px;
+        text-align: center;
+    }
 }
 
 .testimonial-wrapper .back-button {

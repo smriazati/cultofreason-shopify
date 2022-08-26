@@ -35,6 +35,10 @@
 </div>
 
 {% style %}
+.ingredients-list, 
+.ingredients-list * {
+  box-sizing: border-box;
+}
 .ingredients-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -44,10 +48,24 @@
   border-top: 1px solid #1B1D1E;
   margin-top: 146px;
 }
-
+@media (min-width: 801px) {
+  .ingredients-list {
+    margin-top: 146px;
+  }
+}
+@media (max-width: 800px) {
+  .ingredients-list {
+    grid-template-columns: 95%;
+    grid-auto-rows: auto;
+    overflow: hidden;
+    margin-top: 100px;
+  }
+}
 
 .ingredients-list .ingredient-item {
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,6 +73,20 @@
   background: #fff;
   transition: .3s ease all;
   padding: 40px;
+}
+
+@media (min-width: 801px) {
+  .ingredients-list .ingredient-item {
+    padding: 40px;
+  }
+}
+@media (max-width: 800px) {
+  .ingredients-list .ingredient-item {
+    padding: 40px 30px 40px 20px;
+  }
+  .ingredients-list .ingredient-item > *:nth-child(2) {
+    margin-top: 40px;
+  }
 }
 
 .ingredients-list .ingredient-item:hover {

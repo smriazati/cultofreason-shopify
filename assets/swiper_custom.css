@@ -12,6 +12,13 @@
     padding-left: 34px;
 }
 
+@media (max-width: 800px) {
+    .swiper-controls {
+        padding: 10px 8px;
+        justify-content: space-between;
+    }
+}
+
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
     z-index: 111;

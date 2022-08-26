@@ -16,12 +16,23 @@
   background: #DDE0E5;
   padding: 100px 0;
 }
-.features-wrapper .flex-row > *:first-child {
-  flex: 0 0 70%;  
+@media (min-width: 801px) {
+  .features-wrapper .flex-row > *:first-child {
+    flex: 0 0 70%;  
+  }
+  .features-wrapper .flex-row > *:last-child {
+    flex: 0 0 25%;
+  }
 }
-.features-wrapper .flex-row > *:last-child {
-  flex: 0 0 25%;
+@media (max-width: 800px) {
+  .features-wrapper .flex-row  {
+    flex-direction: column;
+  }
+  .features-wrapper .flex-row > *:first-child {
+    margin-bottom: 54px;
+  }
 }
+
 {% endstyle %}
 
 {% schema %}

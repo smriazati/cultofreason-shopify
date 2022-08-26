@@ -1,11 +1,11 @@
 
-<div class="page-container page-vert-padding">
+<div class="page-container page-vert-padding-top page-vert-padding-bottom">
     {%- paginate collection.products by 6 -%}
         {%- if collection.products.size == 0 -%}
             <p>This collection is empty</p>
         {%- else -%}
             <div>
-                <ul class="product-grid ul-plain">
+                <ul class="product-grid products-list ul-plain">
                     {%- for product in collection.products -%}
                     <li>
                         <a href="{{ product.url }}" class="link-plain">
@@ -21,11 +21,11 @@
                             {%- endif -%}
                             <div class="image-wrapper">
                                 <img
-                                    src="{{ product.featured_media | image_url: width: 457, height: 570 }}"
+                                    src="{{ product.featured_media | image_url: width: 800, height: 998 }}"
                                     alt="{{ product.featured_media.alt | escape }}"
                                     loading="lazy"
-                                    width="457"
-                                    height="570"
+                                    width="800"
+                                    height
                                     class="object-cover-max"
                                 />
                             </div>
@@ -50,6 +50,7 @@
 </div>
 
 {%- style -%}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -57,6 +58,14 @@
     grid-column-gap: 1rem;
     grid-row-gap: 1.5rem;
 }
+
+@media (max-width: 800px) {
+    .product-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+
 .product-grid li a {
     display: grid;
     grid-template-columns: 100%;
@@ -78,9 +87,7 @@
     position: relative;
     z-index: 9;
 }
-/* .product-grid li .image-wrapper img {
-    max-width: 100%;
-} */
+
 .product-grid li .text-wrapper {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -90,4 +97,5 @@
 .product-grid li .text-wrapper > *:first-child {
     margin-bottom: 4px;
 }
+
 {%- endstyle -%}

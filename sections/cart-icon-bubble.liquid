@@ -2,5 +2,7 @@
   aria-label="Open cart drawer"
   id="cart-icon-bubble"
 >
-  <span class="label">{{ 'templates.cart.cart' | t }}</span> <span class="count">({{ cart.item_count }})</span>
+  <span class="hide-on-mobile">{{ 'templates.cart.cart' | t }}</span> 
+  <span>
+  ({{ cart.item_count }})
 </button>
