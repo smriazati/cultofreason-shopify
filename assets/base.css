@@ -185,7 +185,7 @@ p {
     font-weight: 400;
     line-height: 24px;
     text-decoration: underline !important;
-    color: #949B9E;
+    color: #949B9E !important;
 }
 
 .text-16-bold {
@@ -617,4 +617,15 @@ input::placeholder {
 
 label {
     display: none;
+}
+
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+}
+
+.body-wrapper.contact {
+    background: var(--volcano)
 }

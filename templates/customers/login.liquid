@@ -1,6 +1,15 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .customer {
+    background: url({{ 'account-bg-image.jpg' | asset_url }})  top right no-repeat;
+  }
+  </style>
+
+
+
 <div class="customer login">
+  <div class="flex-col flex-align-center flex-center">
   <h1 class="h1 mb-24" id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
   </h1>
@@ -142,4 +151,5 @@
       {%- endform -%}
     </div>
   {%- endif -%}
+</div>
 </div>

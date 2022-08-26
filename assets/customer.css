@@ -1,15 +1,15 @@
 .customer:not(.account):not(.order) {
-  margin: 6rem auto 9rem;
-  max-width: 33.4rem;
-  padding: 0 1.5rem;
+  /* margin: 6rem auto 9rem; */
+  /* max-width: 33.4rem; */
+  /* padding: 0 1.5rem; */
   text-align: center;
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
     max-width: 47.8rem;
   }
-}
+} */
 
 .customer form {
   margin-top: 4rem;
@@ -773,4 +773,18 @@ li[data-address]>h2 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.customer:not(.account):not(.order) {
+  max-width: 100% !important;
+  margin: 0 !important;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer:not(.account):not(.order)>div {
+  max-width: 24rem;
 }

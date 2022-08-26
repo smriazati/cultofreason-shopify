@@ -84,6 +84,7 @@
 
 </head>
 <body class="template-{{ request.page_type | handle }}">
+  <div class="{{ template.suffix }} body-wrapper">
   <a class="visually-hidden" href="#MainContent">
     Skip to text
   </a>
@@ -135,7 +136,7 @@
   </script>
 
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
-
+</div>
 </body>
 
 </html>
