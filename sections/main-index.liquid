@@ -1,5 +1,40 @@
-<div class="page-container">
-  <h1 class="h1 text-center">{{ section.settings.heading }}</h1>
+<script>
+
+  function setIndexAnimation() {
+    if (!gsap) {return }
+    const page = document.getElementById('pageIndex');
+    const img = page.querySelector('.bg-img');
+    const heading = page.querySelector('h1');
+    const text = page.querySelector('h2');
+    gsap.set(img, {
+      y: window.innerHeight,
+    })
+
+    gsap.set(heading, {
+      y: (window.innerHeight - heading.offsetHeight) / 2 + heading.offsetHeight,
+    })
+
+    gsap.set(text, {
+      y: (window.innerHeight - text.offsetHeight) / 2 + text.offsetHeight,
+    })
+
+    let tl = gsap.timeline({
+      defaults: { 
+        duration: .7,
+        ease: "power3.out" 
+      },
+    });
+    tl.to(img, {y: 0}).to(heading, {y: 0}, "-=.3").to(text, {y: 0}, "-=.3");
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setIndexAnimation();
+  }, false);
+
+</script>
+<div class="page-container" id="pageIndex">
+  <div class="bg-img"></div>
+  <h1 class="h1 text-center mb-24">{{ section.settings.heading }}</h1>
   <h2 class="large-text text-center">{{ section.settings.text }}</h2>
 
   <div class="bottom-button bg-dark">
@@ -16,6 +51,16 @@
 {%- render 'dark-mode-styles' -%}
 
 {%- style -%}
+body.template-index {
+  max-height: 100vh;
+  overflow: hidden;
+}
+body.template-index .page-container,
+body.template-index .page-container h1, 
+body.template-index .page-container h2 {
+    max-width: 100%;
+    width: 100%;
+}
 .bottom-button {
     position: fixed;
     bottom: 0;
@@ -29,12 +74,41 @@
 }
 {%- endstyle -%}
 <style>
-.site-main {
-    background: url({{ section.settings.bg_img | image_url }}) no-repeat fixed center center;
-    background-size: cover;
-}
 
+.bg-img {
+    background: url({{ section.settings.bg_img | image_url }}) no-repeat fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 </style>
+
+{% if section.settings.bg_alignment != blank %}
+  {% if section.settings.bg_alignment == 'left' %}
+    <style>
+      .bg-img {
+          background-position: left center;
+      }
+    </style>
+  {% endif %}
+  {% if section.settings.bg_alignment == 'middle' %}
+    <style>
+      .bg-img {
+          background-position: center center;
+      }
+    </style>
+  {% endif %}
+  {% if section.settings.bg_alignment == 'right' %}
+    <style>
+      .bg-img {
+          background-position: right center;
+      }
+    </style>
+  {% endif %}
+{% endif %}
 
 {% schema %}
 {
@@ -43,7 +117,27 @@
     {
       "type": "image_picker",
       "id": "bg_img",
-      "label": "Background Image"
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "bg_alignment",
+      "label": "Image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "middle"
     },
     {
       "type": "text",
