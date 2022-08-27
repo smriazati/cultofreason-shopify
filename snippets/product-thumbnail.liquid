@@ -22,7 +22,7 @@
 
 <noscript>
   {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
-    <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
+    {% comment %} <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span> {% endcomment %}
     <div class="product__media media gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
       <img
         srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 493 }} 493w,{% endif %}
@@ -76,7 +76,7 @@
 
 <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
   <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
-    {%- liquid
+    {% comment %} {%- liquid
       case media.media_type
       when 'video' or 'external_video'
         render 'icon-play'
@@ -85,7 +85,7 @@
       else
         render 'icon-zoom'
       endcase
-    -%}
+    -%} {% endcomment %}
   </span>
 
   <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
@@ -127,10 +127,8 @@
     <span class="deferred-media__poster-button motion-reduce">
       {%- if media.media_type == 'model' -%}
         <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>
-        {%- render 'icon-3d-model' -%}
       {%- else -%}
         <span class="visually-hidden">{{ 'products.product.media.play_video' | t }}</span>
-        {%- render 'icon-play' -%}
       {%- endif -%}
     </span>
     <img
@@ -184,7 +182,7 @@
         data-shopify-title="title"
         data-shopify-xr-hidden
         >
-        {% render 'icon-3d-model' %}
+        {% comment %} {% render 'icon-3d-model' %} {% endcomment %}
         {{ 'products.product.xr_button' | t }}
       </button>
     {%- endif -%}

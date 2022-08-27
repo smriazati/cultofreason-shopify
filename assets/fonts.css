@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Founders Grotesk';
+    font-weight: normal;
+    src: url('founders-grotesk-regular.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Founders Grotesk';
+    font-weight: bold;
+    src: url('founders-grotesk-bold.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Editorial New';
+    font-style: normal;
+    font-weight: 200;
+    src: url('PPEditorialNew-Ultralight.woff2') format('woff2'),
+        url('PPEditorialNew-Ultralight.woff') format('woff');
+}

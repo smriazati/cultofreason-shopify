@@ -2,7 +2,7 @@
   <h1 class="h1 text-center mb-54">
     {{ page.title | escape }}
   </h1>
-  <div class="text text-max-width text-center">
+  <div class="text page-content-max-width text-center">
     {{ page.content }}
   </div>
   <div class="ingredients-list">
@@ -44,8 +44,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(476px, auto);
   width: 100%;
-  border-left: 1px solid #1B1D1E;
-  border-top: 1px solid #1B1D1E;
+  border-left: 1px solid var(--volcano);
+  border-top: 1px solid var(--volcano);
   margin-top: 146px;
 }
 @media (min-width: 801px) {
@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #1B1D1E;
+  border: 1px solid var(--volcano);
   background: #fff;
   transition: .3s ease all;
   padding: 40px;
@@ -90,7 +90,7 @@
 }
 
 .ingredients-list .ingredient-item:hover {
-  background: #EEF580;
+  background: var(--sulfur);
 }
 
 .ingredients-list .ingredient-item {

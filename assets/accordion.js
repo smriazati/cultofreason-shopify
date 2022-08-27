@@ -1,21 +1,3 @@
-document.addEventListener('DOMContentLoaded', productFunctions, false);
-
-function productFunctions () {
-    moveProductReviewStars();
-    initAccordion();
-}
-
-
-
-function moveProductReviewStars() {
-    const starsEl = document.querySelector('.spr-starrating .spr-stars');
-    const starsDestEl = document.getElementById('customProductReviewsStars')
-    if (!starsEl || !starsDestEl) {
-        return;
-    }
-    starsDestEl.appendChild(starsEl);
-}
-
 function initAccordion() {
     const accordion = document.getElementById('accordion');
     if (!accordion) {
@@ -37,3 +19,4 @@ function initAccordion() {
         })
     })
 }
+document.addEventListener('DOMContentLoaded', initAccordion, false);

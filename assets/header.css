@@ -39,7 +39,7 @@
     }
 
     .mobile-menu-wrapper {
-        background: #1B1D1E;
+        background: var(--volcano);
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -85,11 +85,11 @@
     }
 
     .mobile-menu-wrapper .menu-wrapper nav li a:hover {
-        color: #EEF580;
+        color: var(--sulfur);
     }
 
     .mobile-menu-wrapper .menu-wrapper nav:first-child li a {
-        font-family: 'Editorial New', serif;
+        font-family: var(--serif);
         font-size: 60px;
         font-weight: 200;
         line-height: 72px;

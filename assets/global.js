@@ -778,6 +778,7 @@ class VariantSelects extends HTMLElement {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
+      this.updateButtonPrice();
       this.updateMedia();
       this.updateURL();
       this.updateVariantInput();
@@ -867,8 +868,15 @@ class VariantSelects extends HTMLElement {
       });
   }
 
+  updateButtonPrice() {
+    const price = this.currentVariant.price;
+    const priceEl = document.getElementById('priceInBtn');
+    if (!priceEl) return;
+    priceEl.innerHTML = `$${String(price).slice(0, -2)}`;
+  }
+
   toggleAddButton(disable = true, text, modifyClass = true) {
-    const productForm = document.getElementById(`product-form-${this.dataset.section}`);
+    const productForm = document.getElementById(`product - form - ${this.dataset.section} `);
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
@@ -879,17 +887,17 @@ class VariantSelects extends HTMLElement {
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
-      addButtonText.textContent = window.variantStrings.addToCart;
+      // addButtonText.textContent = window.variantStrings.addToCart;
     }
 
     if (!modifyClass) return;
   }
 
   setUnavailable() {
-    const button = document.getElementById(`product-form-${this.dataset.section}`);
+    const button = document.getElementById(`product - form - ${this.dataset.section} `);
     const addButton = button.querySelector('[name="add"]');
     const addButtonText = button.querySelector('[name="add"] > span');
-    const price = document.getElementById(`price-${this.dataset.section}`);
+    const price = document.getElementById(`price - ${this.dataset.section} `);
     if (!addButton) return;
     addButtonText.textContent = window.variantStrings.unavailable;
     if (price) price.classList.add('visibility-hidden');
@@ -897,7 +905,7 @@ class VariantSelects extends HTMLElement {
 
   getVariantData() {
     this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
-    return this.variantData;
+    return this.variantData; // variant data
   }
 }
 

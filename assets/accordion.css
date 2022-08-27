@@ -1,0 +1,45 @@
+/* accordion */
+
+.accordion-wrapper .accordion-title {
+    padding: 12px 0;
+    border-top: 1px solid var(--volcano);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-wrapper .accordion-title::after {
+    content: '+';
+    display: flex;
+}
+
+.accordion-wrapper .accordion-title:hover {
+    cursor: pointer;
+}
+
+.accordion-wrapper .accordion-collapsible {
+    height: 0;
+    overflow: hidden;
+    transition: .3s ease all;
+}
+
+.accordion-wrapper .expanded .accordion-collapsible {
+    height: 100%;
+}
+
+.accordion-wrapper .expanded .accordion-title::after {
+    content: '-';
+}
+
+.accordion-wrapper .accordion-collapsible p {
+    padding-bottom: 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    opacity: 0;
+    transition: .5s ease all;
+}
+
+.accordion-wrapper .expanded .accordion-collapsible p {
+    opacity: 1;
+}

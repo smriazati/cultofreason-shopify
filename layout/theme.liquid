@@ -62,8 +62,28 @@
     display: none;
   }
 
-  {% endstyle %}
+  :root {
+      --serif: 'Editorial New', serif;
+      --sans-serif: 'Founders Grotesk', sans-serif;
+      --volcano: #1B1D1E;
+      --volcano-600: #61686B;
+      --volcano-300: #AEB4B7;
+      --volcano-100: #E4E6E7;
+      --volcano-50: #F2F2F3;
+      --powder: #DDE0E5;
+      --cloud: #B3C1D2;
+      --sulfur: #EEF580;
+      --warning: #FF6955;
+      --disabled: #D1D1D1;
+      --active: #9EF875;
+      --body-text-color: var(--volcano);
+      --link-text-color: var(--volcano-600);
+      --site-header-height: 96px;
+  }
 
+  {% endstyle %}
+  {{ 'fonts.css' | asset_url | stylesheet_tag }}
+  {{ 'typography.css' | asset_url | stylesheet_tag }}
   {{ 'base.css' | asset_url | stylesheet_tag }}
   
   <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -73,7 +93,7 @@
   </script>
 
     {% comment %}
-  barba.js
+    barba.js
   {% endcomment %}
   {% if request.page_type != 'collection' and request.page_type != 'product' and request.page_type != 'cart' %}
     <script src="https://cdn.jsdelivr.net/npm/gsap" defer="defer"></script>

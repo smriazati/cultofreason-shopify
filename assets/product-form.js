@@ -1,4 +1,5 @@
 if (!customElements.get('product-form')) {
+
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
       super();
@@ -13,6 +14,7 @@ if (!customElements.get('product-form')) {
 
     onSubmitHandler(evt) {
       evt.preventDefault();
+
       if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
       this.handleErrorMessage();
@@ -24,7 +26,7 @@ if (!customElements.get('product-form')) {
       const config = fetchConfig('javascript');
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
-
+      console.log('form', this.form)
       const formData = new FormData(this.form);
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));

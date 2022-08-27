@@ -3,7 +3,7 @@
 }
 
 .jdgm-star {
-    color: #1B1D1E;
+    color: var(--volcano);
 }
 
 .jdgm-star::before {

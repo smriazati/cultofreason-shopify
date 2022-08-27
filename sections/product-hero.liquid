@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer="defer"></script>
 <script src="{{ 'swiper_init.js' | asset_url }}" defer="defer"></script>
 {{ 'swiper_custom.css' | asset_url | stylesheet_tag }}
 
-<div class="main-product page-container page-container-mb-full">
+<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
+{{ 'accordion.css' | asset_url | stylesheet_tag }}
+
+<div class="main-product page-container page-container-full">
     <div class="hero-wrapper">
         <div class="gallery-wrapper">
             <div class="swiper">
@@ -37,9 +40,6 @@
             {%- if product.metafields.custom.size != blank -%}
                 <p class="text-product-size mb-4">{{ product.metafields.custom.size }}</p>
             {%- endif -%}
-
-            <div class="mb-8" id="customProductReviewsStars">
-            </div>
 
             <div class="text mb-24 rte">{{ product.description }}</div>
 
