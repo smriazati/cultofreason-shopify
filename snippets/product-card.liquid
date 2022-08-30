@@ -29,6 +29,14 @@
     endif
   -%}
   <div class="card-wrapper product-grid-item underline-links-hover">
+
+        <div class="badge">
+          {%- if card_product.available == false -%}
+            <span class="btn-circle">{{ 'products.product.sold_out' | t }}</span>
+          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            <span class="btn-circle">{{ 'products.product.on_sale' | t }}</span>
+          {%- endif -%}
+        </div>
         {%- if card_product.featured_media -%}
           <div class="card__media image-wrapper">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
@@ -49,7 +57,6 @@
                 height="{{ card_product.featured_media.height }}"
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
-
               {%- if card_product.media[1] != nil and show_secondary_image -%}
                 <img
                   srcset="{%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
@@ -72,9 +79,7 @@
         {%- endif -%}
         <div class="text-wrapper">
             <h3 class="text-product-preview-title" {% if card_product.featured_media == nil %} id="title-{{ section_id }}-{{ card_product.id }}"{% endif %}>
-              <a href="{{ card_product.url }}" id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}" class="plain-link">
-                {{ card_product.title | escape }}
-              </a>
+              {{ card_product.title | escape }}
             </h3>
             <p class="detail">
                 {%- if card_product.compare_at_price_max > 0 -%}

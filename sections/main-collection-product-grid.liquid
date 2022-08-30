@@ -14,18 +14,17 @@
 
                         <li>                        
                         <a href="{{ product.url }}" class="link-plain">
-
-                        {% render 'product-card',
-                            card_product: product,
-                            media_aspect_ratio: 'adapt',
-                            show_secondary_image: true,
-                            show_vendor: false,
-                            show_rating: false,
-                            lazy_load: lazy_load,
-                            show_quick_add: false,
-                            section_id: section.id
-        
-                        %}
+                            {% render 'product-card',
+                                card_product: product,
+                                media_aspect_ratio: 'adapt',
+                                show_secondary_image: true,
+                                show_vendor: false,
+                                show_rating: false,
+                                lazy_load: lazy_load,
+                                show_quick_add: false,
+                                section_id: section.id
+            
+                            %}
                         </a>    
                         </li> 
                     
@@ -90,9 +89,11 @@
 }
 .product-grid  .product-grid-item .image-wrapper img {
     max-width: 100%;
-    height: auto;
+    min-height: 100%;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+    height: auto;
+    object-fit: cover;
 }
 
 .product-grid  .product-grid-item .image-wrapper img + img{
