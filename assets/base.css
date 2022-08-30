@@ -316,6 +316,25 @@ label {
     transition: .3s ease all;
 }
 
+.product-form,
+.product-form.form-wrapper form,
+.product-form .product-form__buttons,
+.product-form .product-form__buttons button {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 2;
+    flex-direction: column;
+}
+
+
+.product-form .loading-overlay__spinner {
+    display: none;
+}
+
 .product-form.form-wrapper:not(.disabled):hover {
     background: var(--sulfur);
     color: var(--volcano);
@@ -349,4 +368,24 @@ label {
 
 .gsap-slide-in {
     transform: translateY(100vh);
+}
+
+.select {
+    border: 1px solid var(--volcano);
+    padding: 6px 12px
+}
+
+select {
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+    margin: 0;
+}
+
+select:active,
+select:focus,
+select:focus-visible {
+    outline: 0;
 }
