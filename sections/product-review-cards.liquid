@@ -1,0 +1,8 @@
+{{ 'judgeme_custom.css' | asset_url | stylesheet_tag }}
+
+<div id="reviews" class="reviews-cards-wrapper page-container mb-54">
+    <h2 class="text-big-bold text-upper text-center">Reviews</h2>
+    <div>
+        {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
+    </div>
+</div>

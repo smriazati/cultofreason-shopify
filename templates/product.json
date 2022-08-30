@@ -2,18 +2,15 @@
   "sections": {
     "product-hero": {
       "type": "product-hero",
-      "settings": {
-      }
+      "settings": {}
     },
     "product-js": {
       "type": "product-js",
-      "settings": {
-      }
+      "settings": {}
     },
     "reviews": {
       "type": "product-reviews",
-      "settings": {
-      }
+      "settings": {}
     },
     "why_it_works": {
       "type": "product-why-it-works",
@@ -23,13 +20,15 @@
     },
     "testimonial": {
       "type": "product-testimonial",
-      "settings": {
-      }
+      "settings": {}
     },
     "add_to_cart": {
       "type": "product-add-to-cart",
-      "settings": {
-      }
+      "settings": {}
+    },
+    "review_cards": {
+      "type": "product-review-cards",
+      "settings": {}
     }
   },
   "order": [
@@ -38,6 +37,7 @@
     "reviews",
     "why_it_works",
     "testimonial",
-    "add_to_cart"
+    "add_to_cart",
+    "review_cards"
   ]
 }

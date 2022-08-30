@@ -40,6 +40,9 @@
             {%- if product.metafields.custom.size != blank -%}
                 <p class="text-product-size mb-4">{{ product.metafields.custom.size }}</p>
             {%- endif -%}
+            <a class="rating mb-4" href="#reviews">
+                {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+            </a>
 
             <div class="text mb-24 rte">{{ product.description }}</div>
 
@@ -141,6 +144,9 @@
     content: ', ';
     margin-right: 2px;
     display: inline-block;
+}
+.main-product .rating .jdgm-prev-badge__text {
+    display: none;
 }
 
 body.template-product {
