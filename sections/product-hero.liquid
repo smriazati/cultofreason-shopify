@@ -1,30 +1,9 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer="defer"></script>
-<script src="{{ 'swiper_init.js' | asset_url }}" defer="defer"></script>
-{{ 'swiper_custom.css' | asset_url | stylesheet_tag }}
-
-<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
-{{ 'accordion.css' | asset_url | stylesheet_tag }}
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
 
 <div class="main-product page-container page-container-full">
     <div class="hero-wrapper">
         <div class="gallery-wrapper">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    {%- for img in product.images -%}
-                        <div class="swiper-slide">
-                            <img src="{{ img.src | image_url }}" alt="{{ img.alt }}" loading="lazy" width=800 height class="" />
-                        </div>
-                    {%- endfor -%}
-                </div>
-                <div class="swiper-controls">
-                    <div class="current"><span id="slide-count-el"></span> / {{ product.images.size }}</div>
-                    <div class="flex-row">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>      
-                    </div>   
-                </div>             
-            </div>
+            {% render 'product-gallery', images: product.images %}
         </div>
         <div class="text-wrapper">
 
@@ -37,16 +16,48 @@
             {%- if product.metafields.custom.subheadline != blank -%}
                 <h2 class="text-product-subheading mb-4">{{ product.metafields.custom.subheadline }}</h2>
             {%- endif %}
-            {%- if product.metafields.custom.size != blank -%}
+            {%- if product.metafields.custom.size != blank and product.metafields.custom.size != 0 -%}
                 <p class="text-product-size mb-4">{{ product.metafields.custom.size }}</p>
             {%- endif -%}
+
+            
             <a class="rating mb-4" href="#reviews">
                 {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
             </a>
 
+            {% if product.variants.size > 1 %}
+                <div class="flex-row mb-24">
+                    <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                    {%- for option in product.options_with_values -%}
+                    <div class="product-form__input product-form__input--dropdown">
+                        <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                        {{ option.name }}
+                        </label>
+                        <div class="select">
+                        <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                            class="select__select"
+                            name="options[{{ option.name | escape }}]"
+                            form="{{ product_form_id }}"
+                        >
+                            {%- for value in option.values -%}
+                            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                                {{ value }}
+                            </option>
+                            {%- endfor -%}
+                        </select>
+                        </div>
+                    </div>
+                    {%- endfor -%}
+
+                    <script type="application/json">
+                    {{ product.variants | json }}
+                    </script>
+                </variant-selects>
+                </div>
+            {% endif %}
+
             <div class="text mb-24 rte">{{ product.description }}</div>
 
-            {% comment %} <h3>Ingredients</h3> {% endcomment %}
             {% if product.tags.size > 0 %}
                 <h3 class="text-small-bold mb-4">Ingredients</h3>
                 <p class="ingredient-list-commas mb-24">
@@ -63,43 +74,45 @@
                 <p class="link-inline mb-24">{{ product.metafields.custom.made_for_2 | replace: ',', ', ' | replace: '"', '' | replace: '[', '' | replace: ']', '' }}</p>
             {% endif %}
 
-            <div class="accordion-wrapper" id="accordion">
-                <div class="accordion-item">
-                    {% if product.metafields.custom.instructions != 
-                    blank %}
-                        <div class="accordion-title h3">
-                            <h3 class="h3">How to use</h3>
-                        </div>
-                        <div class="accordion-collapsible">
-                            <p>{{ product.metafields.custom.instructions | newline_to_br }}</p>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="accordion-item">
-                    {% if product.metafields.custom.ingredients_list != blank %}
-                        <div class="accordion-title h3">
-                            <h3 class="h3">Ingredients</h3>
-                        </div>
-                        <div class="accordion-collapsible">
-                            <p>{{ product.metafields.custom.ingredients_list }}</p>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="accordion-item">
-                    {% if product.metafields.custom.recycling != blank %}
-                        <div class="accordion-title h3">
-                            <h3 class="h3">Recycling</h3>
-                        </div>
-                        <div class="accordion-collapsible">
-                            <p>{{ product.metafields.custom.recycling | newline_to_br }}</p>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
+            {% render 'product-accordion', metafields: product.metafields.custom %}
+
         </div>
     </div>
-
 </div>
+
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{% if product.variants.size > 1 %}
+        {%- for option in product.options_with_values -%}
+          <div class="product-form__input product-form__input--dropdown">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <div class="select">
+              <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}"
+              >
+                {%- for value in option.values -%}
+                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                    {{ value }}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          </div>
+        {%- endfor -%}
+
+        <script type="application/json">
+          {{ product.variants | json }}
+        </script>
+      </variant-selects>
+    {% render 'product-add-to-cart-variants', product: product %}
+{% else %}
+    {% render 'product-add-to-cart', product: product %}
+{% endif %}
   
 {% style %} 
 .main-product .hero-wrapper {
@@ -153,4 +166,5 @@ body.template-product {
     padding-bottom: 78px;
 }
 {% endstyle %}
+
 

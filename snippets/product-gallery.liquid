@@ -1,0 +1,35 @@
+{% comment %}
+    Renders a gallery
+
+    Accepts:
+    - images: {Object} (required)
+   
+
+    Usage:
+    {% render 'card-product', images: product.images %}
+{% endcomment %}
+
+{% comment %}theme-check-disable RemoteAsset{% endcomment %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer="defer"></script>
+{% comment %}theme-check-enable RemoteAsset{% endcomment %}
+
+<script src="{{ 'swiper_init.js' | asset_url }}" defer="defer"></script>
+{{ 'swiper_custom.css' | asset_url | stylesheet_tag }}
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        {%- for img in images -%}
+            <div class="swiper-slide">
+                <img src="{{ img.src | image_url }}" alt="{{ img.alt }}" loading="lazy" width=800 height class="" />
+            </div>
+        {%- endfor -%}
+    </div>
+    <div class="swiper-controls">
+        <div class="current"><span id="slide-count-el"></span> / {{ product.images.size }}</div>
+        <div class="flex-row">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>      
+        </div>   
+    </div>             
+</div>

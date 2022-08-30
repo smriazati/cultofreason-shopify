@@ -1,0 +1,47 @@
+{% comment %}
+    Renders a gallery
+
+    Accepts:
+    - metafields: {Object} (required)
+   
+
+    Usage:
+    {% render 'product-accordion', metafields: product.metafields.custom %}
+{% endcomment %}
+
+<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
+{{ 'accordion.css' | asset_url | stylesheet_tag }}
+
+<div class="accordion-wrapper" id="accordion">
+    <div class="accordion-item">
+        {% if metafields.instructions != 
+        blank %}
+            <div class="accordion-title h3">
+                <h3 class="h3">How to use</h3>
+            </div>
+            <div class="accordion-collapsible">
+                <p>{{ metafields.instructions | newline_to_br }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="accordion-item">
+        {% if metafields.ingredients_list != blank %}
+            <div class="accordion-title h3">
+                <h3 class="h3">Ingredients</h3>
+            </div>
+            <div class="accordion-collapsible">
+                <p>{{ metafields.ingredients_list }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="accordion-item">
+        {% if metafields.recycling != blank %}
+            <div class="accordion-title h3">
+                <h3 class="h3">Recycling</h3>
+            </div>
+            <div class="accordion-collapsible">
+                <p>{{ metafields.recycling | newline_to_br }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
