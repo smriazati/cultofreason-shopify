@@ -1,11 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<style>
-  .customer {
-    background: url({{ 'account-bg-image.jpg' | asset_url }})  top right no-repeat;
-  }
-  </style>
-
+{% render 'account-bg-img' %}
 
 
 <div class="customer login">

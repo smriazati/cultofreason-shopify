@@ -1,0 +1,7 @@
+{% if settings.account_img %}
+    <style>
+      .customer {
+        background: url({{ settings.account_img | image_url }})  top right no-repeat;
+      }
+    </style>
+    {% endif %}

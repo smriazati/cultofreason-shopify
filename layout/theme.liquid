@@ -92,15 +92,14 @@
     }
   </script>
 
-    {% comment %}
-    barba.js
-  {% endcomment %}
+  {% comment %}theme-check-disable RemoteAsset{% endcomment %}
   {% if request.page_type != 'collection' and request.page_type != 'product' and request.page_type != 'cart' %}
     <script src="https://cdn.jsdelivr.net/npm/gsap" defer="defer"></script>
     <script src="https://unpkg.com/@barba/core" defer="defer"></script>
     <script src="{{ 'barba_init.js' | asset_url }}" defer="defer"></script>
    {{ 'barba.css' | asset_url | stylesheet_tag }}
   {% endif %}
+  {% comment %}theme-check-enable RemoteAsset{% endcomment %}
 
   {% render 'judgeme_core' %}
 

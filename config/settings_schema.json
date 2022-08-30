@@ -15,6 +15,12 @@
         "id": "mobile_menu_img",
         "label": "Mobile menu background image",
         "info": "Upload a PNG file"
+      },
+      {
+        "type": "image_picker",
+        "id": "account_img",
+        "label": "Account page background image",
+        "info": "Upload a PNG file"
       }
     ]
   }
