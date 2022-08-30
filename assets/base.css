@@ -4,7 +4,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     font-size: 18px;
 }
 
@@ -93,6 +93,7 @@ nav ul,
 }
 
 button {
+    color: inherit;
     outline: none;
     border-radius: 0;
     background: transparent;
@@ -122,7 +123,7 @@ button:hover,
 
 @media (max-width: 1400px) {
     .page-container:not(.page-container-full) {
-        max-width: 95%;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -158,6 +159,7 @@ button:hover,
     flex-direction: column;
     justify-content: space-between;
     flex: 2;
+    overflow-x: hidden;
 }
 
 
@@ -204,7 +206,14 @@ button:hover,
     font-size: 16px;
     line-height: 19px;
     padding: 8px 28px;
-    border: 1px solid var(--volcano)
+    border: 1px solid var(--volcano);
+    background: transparent;
+    transition: .3s ease all;
+}
+
+.btn-square:hover {
+    border-color: var(--sulfur);
+    background: var(--sulfur);
 }
 
 input {
@@ -302,6 +311,24 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--volcano);
+    color: #fff;
+    transition: .3s ease all;
+}
+
+.product-form.form-wrapper:not(.disabled):hover {
+    background: var(--sulfur);
+    color: var(--volcano);
+}
+
+.product-form.form-wrapper.disabled {
+    background: #E4E6E7;
+    color: #61686B;
+}
+
+.product-form.form-wrapper.disabled:hover,
+.product-form.form-wrapper.disabled *:hover {
+    cursor: default;
 }
 
 .product-form.form-wrapper form {
@@ -310,9 +337,16 @@ label {
 
 .product-form.form-wrapper input,
 .product-form.form-wrapper button {
-    color: white;
     height: 100%;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 27px;
+}
+
+.gsap-fade-in {
+    opacity: 0;
+}
+
+.gsap-slide-in {
+    transform: translateY(100vh);
 }

@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 gsap.set(data.next.container, {
                     opacity: 0,
                 });
-                window.scrollTo(0, 0);
                 preventBarbaIntoShop();
             },
             afterOnce(data) {
@@ -61,17 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 gsap.to(data.current.container, {
                     opacity: 0,
                     ease: "power1.out",
-                    duration: 1
+                    duration: 0.3,
+                    onComplete: function () { window.scrollTo(0, 0); },
                 });
             },
             enter(data) {
-
                 gsap.set(data.next.container, {
                     opacity: 0,
                 });
                 gsap.to(data.next.container, {
                     opacity: 1,
-                    duration: 1.1
+                    duration: 0.8
                 });
 
             }
@@ -81,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     barba.hooks.enter((data) => {
-        window.scrollTo(0, 0);
         preventBarbaIntoShop();
     });
 

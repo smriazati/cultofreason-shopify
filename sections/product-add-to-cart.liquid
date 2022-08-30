@@ -1,6 +1,6 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-<div class="product-form form-wrapper bg-dark flex-row link-hover">
+<div class="product-form form-wrapper bg-dark flex-row link-hover {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}">
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
     <product-form class="product-form">

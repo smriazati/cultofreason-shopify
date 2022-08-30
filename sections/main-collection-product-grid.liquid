@@ -2,44 +2,33 @@
 <div class="page-container page-vert-padding-top page-vert-padding-bottom">
     {%- paginate collection.products by 6 -%}
         {%- if collection.products.size == 0 -%}
-            <p>This collection is empty</p>
+            <p class="text-center h1">This collection is empty</p>
         {%- else -%}
             <div>
                 <ul class="product-grid products-list ul-plain">
                     {%- for product in collection.products -%}
-                    <li>
+                        {% assign lazy_load = false %}
+                        {%- if forloop.index > 2 -%}
+                            {%- assign lazy_load = true -%}
+                        {%- endif -%}
+
+                        <li>                        
                         <a href="{{ product.url }}" class="link-plain">
-                            {%- if product.available == false or product.compare_at_price_max > product.price -%}
-                                <div class="badge flex-col">
-                                    {%- if product.available == false -%}
-                                        <p class="btn-circle">Sold out</p>
-                                    {%- endif -%}
-                                    {% if product.compare_at_price_max > product.price %}
-                                        <p class="btn-circle">On sale</p>
-                                    {%- endif -%}
-                                </div>
-                            {%- endif -%}
-                            <div class="image-wrapper">
-                                <img
-                                    src="{{ product.featured_media | image_url: width: 800, height: 998 }}"
-                                    alt="{{ product.featured_media.alt | escape }}"
-                                    loading="lazy"
-                                    width="800"
-                                    height
-                                    class="object-cover-max"
-                                />
-                            </div>
-                            <div class="text-wrapper">
-                                <h2 class="text-product-preview-title">{{ product.title }}</h2>
-                                <p class="detail">
-                                    {%- if product.compare_at_price_max > 0 -%}
-                                        <span class="text-muted text-strike">{{ product.compare_at_price_max | money_without_trailing_zeros }}</span>
-                                    {%- endif-%%}
-                                    {{ product.price | money_without_trailing_zeros }}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
+
+                        {% render 'product-card',
+                            card_product: product,
+                            media_aspect_ratio: 'adapt',
+                            show_secondary_image: true,
+                            show_vendor: false,
+                            show_rating: false,
+                            lazy_load: lazy_load,
+                            show_quick_add: false,
+                            section_id: section.id
+        
+                        %}
+                        </a>    
+                        </li> 
+                    
                     {%- endfor -%}
                 </ul>
 
@@ -66,13 +55,13 @@
 }
 
 
-.product-grid li a {
+.product-grid .product-grid-item {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto; 
     position: relative;
 }
-.product-grid li .badge {
+.product-grid  .product-grid-item .badge {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     position: relative;
@@ -81,20 +70,47 @@
     padding-top: 19px;
     padding-right: 13px;
 }
-.product-grid li .image-wrapper {
+.product-grid  .product-grid-item .image-wrapper {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     position: relative;
     z-index: 9;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 567px;
+    overflow: hidden;
 }
 
-.product-grid li .text-wrapper {
+@media (max-width: 800px) {
+    .product-grid  .product-grid-item .image-wrapper {
+        grid-template-rows: 400px;
+    }
+ 
+}
+.product-grid  .product-grid-item .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.product-grid  .product-grid-item .image-wrapper img + img{
+    opacity: 0;
+    transition: .3s ease all;
+}
+
+.product-grid  .product-grid-item .image-wrapper:hover img + img{
+    opacity: 1;
+}
+
+.product-grid  .product-grid-item .text-wrapper {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     text-align: center;
     padding: 12px 0;
 }
-.product-grid li .text-wrapper > *:first-child {
+.product-grid  .product-grid-item .text-wrapper > *:first-child {
     margin-bottom: 4px;
 }
 
