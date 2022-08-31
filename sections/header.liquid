@@ -18,7 +18,7 @@
 
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<header id="siteHeader" class="site-header site-header-lg-screen flex-row flex-full collapsed">
+<header id="siteHeader" class="site-header site-header-lg-screen site-header-grid collapsed">
     <div class="left-col main-menu-wrapper flex-col flex-center">
         <nav>
             <ul class="flex-row">
@@ -68,7 +68,7 @@
                 <img src="{{ settings.mobile_menu_img | image_url }}" alt="{{ settings.mobile_menu_img.alt }}" width height loading="lazy" >
             </div>
         {% endif %}
-        <div class="flex-row">
+        <div class="site-header-grid">
             <div class="left-col flex-col flex-center flex-align-start">
                 <button onclick="toggleMobileMenu()" class="text-16">Close</button>
             </div>

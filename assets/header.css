@@ -33,18 +33,27 @@
     transform: rotateX(50deg);
 }
 
-.site-header .left-col,
-.site-header .right-col {
-    flex: 1;
+.site-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100%;
+}
+
+.site-header-grid .left-col {
+    grid-column: 1 / 2;
+}
+
+.site-header-grid .center-col {
+    grid-column: 2 / 3;
+}
+
+.site-header-grid .right-col {
+    grid-column: 3 / 4;
 }
 
 .site-header .left-col li:not(:last-child),
 .site-header .right-col li:not(:last-child) {
     margin-right: 40px;
-}
-
-.site-header .center-col {
-    flex: 2;
 }
 
 .site-header li,

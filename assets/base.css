@@ -201,6 +201,7 @@ button:hover,
     cursor: default;
 }
 
+input[type="submit"],
 .btn-square {
     display: inline-block;
     font-size: 16px;
@@ -221,6 +222,13 @@ input {
     outline: 0;
     background: transparent;
     border: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0 5px;
+}
+
+textarea {
+    padding: 0 5px;
     font-family: inherit;
     font-size: inherit;
 }
