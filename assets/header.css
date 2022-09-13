@@ -63,19 +63,24 @@
     line-height: 19px;
 }
 
-.site-header li {
-    padding-bottom: 4px;
-    transition: .1s ease border;
-    border-bottom: 1px solid transparent;
+@media (min-width: 800px) {
+    .site-header li {
+        padding-bottom: 4px;
+        transition: .1s ease border;
+        border-bottom: 1px solid transparent;
+    }
+
+    .site-header li:focus {
+        border: 1px dashed var(--volcano);
+    }
+
+    .site-header li:hover {
+        border-bottom: 1px solid var(--volcano);
+    }
+
 }
 
-.site-header li:focus {
-    border: 1px dashed var(--volcano);
-}
 
-.site-header li:hover {
-    border-bottom: 1px solid var(--volcano);
-}
 
 @media (max-width: 800px) {
     .site-header .right-col li:not(:last-child) {
