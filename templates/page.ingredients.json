@@ -32,12 +32,111 @@
             "product2": "",
             "product3": ""
           }
+        },
+        "16d773ac-6bcb-47b7-8f54-0f3e2eb122c3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Pumice",
+            "description": "Super soft and super fine, pumice powder is an über gentle physical exfoliant for the skin. Derived from volcanic ash. (We think that’s pretty cool..)",
+            "product1": "grit",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "08e33718-24ff-4cbc-9f26-97cd276c9938": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Snow Mushroom (Tremella Fuciformis)",
+            "description": "Also known as Silver Ear Mushroom and Snow Fungus. A natural hyaluronic acid that deeply hydrates, boosts collagen production and reduces irritation. It’s edible and loaded with antioxidants.",
+            "product1": "quench",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "29c29c73-aeaa-4f98-8b7c-39def0490cce": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Glycerin",
+            "description": "Oldie but goodie humectant. Attracts and holds water in the skin. Plays well with occlusives like oil to seal in hydration.",
+            "product1": "grit",
+            "product2": "quench",
+            "product3": ""
+          }
+        },
+        "296e190c-165c-4750-9a01-353cd7a78dd2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Niacinamide",
+            "description": "Standout ingredient that is a form of Vitamin B3. A must-have for combatting hyperpigmention and maintaining the skin barrier.",
+            "product1": "quench",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "30b7748c-e9b4-4122-bc75-1493a7f189a7": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Licorice Root Extract",
+            "description": "It’s like first aid for the skin. Reduces redness, soothes and calms. Also combats hyperpigmentation.",
+            "product1": "quench",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "59300e1b-6934-4c32-ad44-3b6b42994b16": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cloudberry Seed Oil",
+            "description": "Extracted from edible Rubus Chamaemorus berries. Packed with antioxidants including Vitamins C and E. Stimulates collagen production, protects skin from free radical damage, and targets hyperpigmentation. Combats signs of aging and inflammation.",
+            "product1": "shield",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "222f1cd9-dd62-4118-bdff-a6ab188ed326": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Rosehip Seed Oil (Rosa Canina)",
+            "description": "Anti-inflammatory oil. Full of nourishing essential fatty acids, Omega 3, 6 and 9. Heals skin and is especially good for eczema and psoriasis.",
+            "product1": "shield",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "47d463ff-4fbc-4e56-abfb-ad630e463093": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Bakuchiol",
+            "description": "Plant-based retinol. Stimulates skin cell turnover, improving tone and texture. Tolerated well by sensitive skin.",
+            "product1": "shield",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "2c529816-6c60-498f-b507-b727a00042bd": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Jojoba Seed Oil",
+            "description": "A skincare favorite. Mimics skin’s natural sebum, so helps to regulate oil production. Light and absorbs quickly, making it suitable for oily skin. Plays well with other ingredients.",
+            "product1": "shield",
+            "product2": "",
+            "product3": ""
+          }
         }
       },
       "block_order": [
         "b1b649c9-f20a-4c67-9dba-5fad87fdafc8",
         "a99b4518-f86b-49de-aa97-fe4943cb56e9",
-        "7433e5de-3ca3-4914-810c-ff62185c2c8c"
+        "7433e5de-3ca3-4914-810c-ff62185c2c8c",
+        "16d773ac-6bcb-47b7-8f54-0f3e2eb122c3",
+        "08e33718-24ff-4cbc-9f26-97cd276c9938",
+        "29c29c73-aeaa-4f98-8b7c-39def0490cce",
+        "296e190c-165c-4750-9a01-353cd7a78dd2",
+        "30b7748c-e9b4-4122-bc75-1493a7f189a7",
+        "59300e1b-6934-4c32-ad44-3b6b42994b16",
+        "222f1cd9-dd62-4118-bdff-a6ab188ed326",
+        "47d463ff-4fbc-4e56-abfb-ad630e463093",
+        "2c529816-6c60-498f-b507-b727a00042bd"
       ],
       "settings": {
       }

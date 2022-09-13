@@ -1,11 +1,12 @@
 {
-    "sections": {
-        "product-hero": {
-            "type": "product-hero",
-            "settings": {}
-        }
-    },
-    "order": [
-        "product-hero"
-    ]
+  "sections": {
+    "product-hero": {
+      "type": "product-hero",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-hero"
+  ]
 }

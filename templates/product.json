@@ -2,11 +2,13 @@
   "sections": {
     "product-hero": {
       "type": "product-hero",
-      "settings": {}
+      "settings": {
+      }
     },
     "reviews": {
       "type": "product-reviews",
-      "settings": {}
+      "settings": {
+      }
     },
     "why_it_works": {
       "type": "product-why-it-works",
@@ -16,11 +18,13 @@
     },
     "testimonial": {
       "type": "product-testimonial",
-      "settings": {}
+      "settings": {
+      }
     },
     "review_cards": {
       "type": "product-review-cards",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
