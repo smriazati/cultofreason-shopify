@@ -113,6 +113,10 @@ button:hover,
     padding-top: var(--site-header-height);
 }
 
+.template-index .site-main {
+    padding-top: 0;
+}
+
 
 /* utils */
 

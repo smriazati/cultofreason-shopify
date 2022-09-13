@@ -1,29 +1,35 @@
 <script>
   function setIndexAnimation() {
     if (!gsap) {return }
+console.log('animation yay')
     const page = document.getElementById('pageIndex');
     const img = page.querySelector('.bg-img');
     const heading = page.querySelector('h1');
     const text = page.querySelector('h2');
-    {% comment %} gsap.set(img, {
-      y: page.offsetHeight > window.innerHeight ? page.offsetHeight : window.innerHeight,
-    }) {% endcomment %}
 
-    {% comment %} gsap.set(heading, {
+    gsap.set(img, {
+      y: page.offsetHeight > window.innerHeight ? page.offsetHeight : window.innerHeight,
+      autoAlpha: 0
+    })
+
+    gsap.set(heading, {
       y: (window.innerHeight - heading.offsetHeight) / 2 + heading.offsetHeight,
+      autoAlpha: 0
+
     })
 
     gsap.set(text, {
       y: (window.innerHeight - text.offsetHeight) / 2 + text.offsetHeight,
+      autoAlpha: 0
     })
 
     let tl = gsap.timeline({
       defaults: { 
-        duration: .7,
+        duration: 1,
         ease: "power3.out" 
       },
     });
-    tl.to(img, {y: 0}).to(heading, {y: 0}, "-=.3").to(text, {y: 0}, "-=.3"); {% endcomment %}
+    tl.to(img, {y: 0, autoAlpha: 1, duration: 1}).to(heading, {y: 0, autoAlpha: 1}, "-=.3").to(text, {y: 0, autoAlpha: 1}, "-=.3"); 
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -32,16 +38,16 @@
 
 </script>
 <div class="page-container" id="pageIndex">
-  <div class="bg-img"></div>
-  <h1 class="h1 text-center mb-24">{{ section.settings.heading }}</h1>
-  <h2 class="large-text text-center">{{ section.settings.text }}</h2>
+  <div class="gsap-animate-in bg-img"></div>
+  <h1 class="gsap-animate-in h1 text-center mb-24">{{ section.settings.heading }}</h1>
+  <h2 class="gsap-animate-in large-text text-center">{{ section.settings.text }}</h2>
 
   <div class="index-main-button bg-dark">
     <a href="/collections/catalog" class="flex-row link-plain">
         {%- for item in (1..3) -%}
             <img src="{{ 'images_mark.svg' | asset_url }}" loading="lazy" width=18 height=18 class="filter-invert">
-            <p class="h3 nowrap">{{ section.settings.text2 }}</p>
-            <p class="h3 nowrap">Shop now </p>
+            <p class="nowrap">{{ section.settings.text2 }}</p>
+            <p class="nowrap">Shop now </p>
         {%- endfor -%}
     </a>
   </div>
@@ -52,11 +58,14 @@
 {%- style -%}
 body.template-index {
    position: relative;
-  /* max-height: 100vh; */
+  max-height: 100vh;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
-body.template-index .page-container {
-  height: 100%;
+body.template-index .site-main {
+  background: #000;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 body.template-index .page-container h1, 
@@ -76,9 +85,22 @@ body.template-index .page-container {
     width: 100%;
     padding: 4px 0;
 }
+.index-main-button p {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 80%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
 
+.index-main-button > a {
+  align-items: center;
+}
 .index-main-button a > *:not(last-child) {
-    margin-right: 10px;
+    margin-right: 24px;
+}
+.gsap-animate-in {
+  opacity: 0;
 }
 
 .bg-img {
