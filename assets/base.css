@@ -328,6 +328,21 @@ label {
     transition: .3s ease all;
 }
 
+@keyframes slideInBtn {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.product-form {
+    transform: translateY(100%);
+    animation: slideInBtn cubic-bezier(.19, .66, .25, .76) 500ms 500ms forwards;
+}
+
 .product-form,
 .product-form.form-wrapper form,
 .product-form .product-form__buttons,
