@@ -9,10 +9,17 @@
     {% render 'product-add-to-cart-variants', product: product %}
 {% endcomment %}
 
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+{% assign is_coming_soon = false %}
 
-<div class="product-form form-wrapper bg-dark flex-row link-hover">
+{% for tag in product.tags %}
+  {% if tag contains 'coming-soon' %}
+    {% assign is_coming_soon = true %}
+  {% endif %}
+{% endfor %}
+
+<div class="product-form form-wrapper bg-dark flex-row link-hover {% if product.selected_or_first_available_variant.available == false or is_coming_soon == true %}disabled{% endif %}">
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
 
       <product-form class="product-form">
         {%- form 'product', product, data-productid: product.id, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
@@ -21,12 +28,14 @@
             <button
               type="submit"
               name="add"
-              class="product-form__submit flex-row" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+              class="product-form__submit flex-row" {% if product.selected_or_first_available_variant.available == false or is_coming_soon == true %}disabled{% endif %}
             >
                 <div class="flex-row">
                     <span>
-                    {%- if product.selected_or_first_available_variant.available -%}
-                        Add to Cart
+                      {%- if product.selected_or_first_available_variant.available and is_coming_soon == false -%}
+                        Add to Cart 
+                    {%- elsif is_coming_soon -%}
+                        Coming Soon
                     {%- else -%}
                         Sold out
                     {%- endif -%}
