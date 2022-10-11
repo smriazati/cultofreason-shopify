@@ -2,6 +2,13 @@
   "current": {
     "mobile_menu_img": "shopify:\/\/shop_images\/cultofreason_sadieculberson_26.png",
     "account_img": "shopify:\/\/shop_images\/CultOfReason_OilDropper.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/CultOfReason-Logo-R-Black.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_color": "#f0f1f3",
+    "checkout_sidebar_background_color": "#f0f1f3",
+    "checkout_accent_color": "#191d20",
+    "checkout_button_color": "#191d20",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
