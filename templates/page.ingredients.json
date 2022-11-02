@@ -123,6 +123,16 @@
             "product3": ""
           }
         },
+        "4486a7a5-a66b-4b38-87c5-d23ba1f8446e": {
+          "type": "ingredient",
+          "settings": {
+            "title": "How do I use Serums and Oils?",
+            "description": "Skincare regimens can be very overwhelming, we know! Cult of Reason pledges to keep things simple and straightforward for you. Estheticians are often asked how to incorporate serums and oils into a daily skincare ritual. Always think of product application in terms of thin to thick, or oil over water. To get a complete moisturizer, the water-giving product (Quench serum) is applied when the skin is damp after cleansing (Grit.) Pat serum into the skin and let set for a minute. Follow with the occlusive oils (Shield) to capture and hold the water to the skin. Think of Quench as the water base layer and Shield as the sealant on top.",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
         "a55b80ce-7e48-4f9a-8816-93be21cf6698": {
           "type": "ingredient",
           "settings": {
@@ -157,6 +167,7 @@
         "222f1cd9-dd62-4118-bdff-a6ab188ed326",
         "47d463ff-4fbc-4e56-abfb-ad630e463093",
         "2c529816-6c60-498f-b507-b727a00042bd",
+        "4486a7a5-a66b-4b38-87c5-d23ba1f8446e",
         "a55b80ce-7e48-4f9a-8816-93be21cf6698",
         "82972ad2-536b-443c-91e4-d554502e35e3"
       ],
