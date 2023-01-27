@@ -39,8 +39,8 @@ data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false
   <div class='jdgm-revs-tab-btn btn' position="none" tabindex="0" aria-label="Click to open Judge.me floating reviews tab" role='button'>★ Judge.me Reviews</div>
   <div class='jdgm-revs-tab__header'>
     <a class='jdgm-close-ico'></a>
-    <h3 class='jdgm-revs-tab__title'>Let customers speak for us</h3>
-    <a class='jdgm-revs-tab__url' href='https://cultofreasonskin.com/pages/reviews'>
+    <h3 class='jdgm-revs-tab__title'>#f9fafb</h3>
+    <a class='jdgm-revs-tab__url' href='#339999'>
       <div data-score='{{ jm_metafields.all_reviews_rating }}' class='jdgm-all-reviews-rating' aria-label='Average rating is {{ jm_metafields.all_reviews_rating }}' role='img'></div>{{ jm_metafields.all_reviews_count }} reviews
     </a>
   </div>
@@ -52,7 +52,8 @@ data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false
 <div class='jdgm-carousel-wrapper'
 data-from-snippet='{% if concierge_install != nil %}{{ concierge_install }}{% else %}true{% endif %}'
 data-auto-install='{% if auto_install != nil %}{{ auto_install }}{% else %}false{% endif %}' >
-  {{ shop.metafields.judgeme.featured_carousel }}
+  {% assign jm_metafields = shop.metafields.judgeme %}  
+  {{ jm_metafields.featured_carousel }}
 </div>
 {% endif %}
 
