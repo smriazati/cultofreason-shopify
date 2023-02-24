@@ -7,7 +7,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Sulfur",
-            "description": "Underutilized powerhouse ingredient that treats acne, pore congestion, psoriasis, rosacea, eczema and more. Kills bacteria and gently exfoliates. A building block of our bodies, it’s well tolerated by most skin. (We promise you won’t get the “typical” sulfur smell thanks to yummy essential oils in our formula.)",
+            "description": "An underutilized powerhouse essential element that treats acne, pore congestion, psoriasis, rosacea, eczema and more. Kills bacteria and gently exfoliates. A building block of our bodies, it’s well tolerated by most skins. Can be used daily by oily skin types and once or twice weekly by dry skin and sensitive skin types. Better tolerated than benzoyl peroxide. (We promise you won’t get the “typical” sulfur smell thanks to yummy essential oils in our formula.)",
             "product1": "grit",
             "product2": "",
             "product3": ""
@@ -17,7 +17,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Salicylic Acid",
-            "description": "One of the best known ingredients for acne. Gets its stellar reputation due to molecules that are small enough to actually get inside pores to exfoliate and clear congestion.",
+            "description": "One of the best known ingredients for acne. Gets its stellar reputation due to molecules that are small enough to actually get inside pores to exfoliate and clear congestion. This beta-hydroxy acid is also a bacteria fighter and a perfect addition to any pore-decongesting product.",
             "product1": "grit",
             "product2": "",
             "product3": ""
@@ -37,7 +37,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Pumice",
-            "description": "Super soft and super fine, pumice powder is an über gentle physical exfoliant for the skin. Derived from volcanic ash. (We think that’s pretty cool..)",
+            "description": "A super soft and super fine naturally renewing ingredient, pumice powder is an über gentle physical exfoliant for the skin. Safe enough for fragile skin types. Derived from volcanic ash. (We think that’s pretty cool...)",
             "product1": "grit",
             "product2": "",
             "product3": ""
@@ -47,7 +47,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Snow Mushroom (Tremella Fuciformis)",
-            "description": "Also known as Silver Ear Mushroom and Snow Fungus. A natural hyaluronic acid that deeply hydrates, boosts collagen production and reduces irritation. It’s edible and loaded with antioxidants.",
+            "description": "Also known as Silver Ear Mushroom and the \"beauty mushroom.\"  A natural polysaccahride that deeply hydrates, boosts collagen production and reduces irritation. It’s edible and loaded with antioxidants A, C, E, and kojic acid, which is used to address hyperpigmentation. This gorgeous mushroom has an edge on hyaluronic acid as its smaller molecule more easily penetrates the skin.",
             "product1": "quench",
             "product2": "",
             "product3": ""
@@ -57,7 +57,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Glycerin",
-            "description": "Oldie but goodie humectant. Attracts and holds water in the skin. Plays well with occlusives like oil to seal in hydration.",
+            "description": "An oldie but goodie lipid-derived humectant. Glycerin is like a water fountain for your skin as it increases water content at the surface because of its ability to attract and hold more than 1000x its molecular weight in water. Is known as one of the most hydrating humectants in the cosmetic ingredient pantheon. Plays well with occlusives like oil to seal in hydration.",
             "product1": "grit",
             "product2": "quench",
             "product3": ""
@@ -67,7 +67,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Niacinamide",
-            "description": "Standout ingredient that is a form of Vitamin B3. A must-have for combatting hyperpigmention and maintaining the skin barrier.",
+            "description": "A standout ingredient that is a form of Vitamin B3. A must-have for combatting hyperpigmention and maintaining the skin barrier.\n\nThe most well studied anti-aging benefits of nicacinamide are its ability to increase the antioxidant capacity of the skin and its ability to upregulate the synthesis of ceramides as well as other Stratum Corneum intercellular lipids resulting in less TEWL (trans epidermal water loss.)",
             "product1": "quench",
             "product2": "",
             "product3": ""
@@ -77,7 +77,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Licorice Root Extract",
-            "description": "It’s like first aid for the skin. Reduces redness, soothes and calms. Also combats hyperpigmentation.",
+            "description": "Has been used for centuries as a first aid for the skin and internal inflammation. Reduces redness, soothes and calms. Also combats hyperpigmentation via glabridin, which inhibits the skin's production of tyrosinase.",
             "product1": "quench",
             "product2": "",
             "product3": ""
@@ -87,7 +87,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Cloudberry Seed Oil",
-            "description": "Extracted from edible Rubus Chamaemorus berries. Packed with antioxidants including Vitamins C and E. Stimulates collagen production, protects skin from free radical damage, and targets hyperpigmentation. Combats signs of aging and inflammation.",
+            "description": "Extracted from edible Nordic Rubus Chamaemorus berries. Packed with antioxidants including Vitamin E and extraordinary amounts of Vitamin C. Stimulates collagen production, protects skin from free radical damage, and targets hyperpigmentation. Combats signs of aging and inflammation.",
             "product1": "shield",
             "product2": "",
             "product3": ""
@@ -97,7 +97,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Rosehip Seed Oil (Rosa Canina)",
-            "description": "Anti-inflammatory oil. Full of nourishing essential fatty acids, Omega 3, 6 and 9. Heals skin and is especially good for eczema and psoriasis.",
+            "description": "Anti-inflammatory oil. Full of nourishing essential fatty acids, Omega 3, 6 and 9. A high content of anthocyanin heals skin and is especially good for eczema and psoriasis. Becuase of its extra high content of omega -6, rosehip, aka linoleic acid, is thought to be beneficial when treating acne. Popular for improving post-surgical scars.",
             "product1": "shield",
             "product2": "",
             "product3": ""
@@ -107,7 +107,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Bakuchiol",
-            "description": "Plant-based retinol. Stimulates skin cell turnover, improving tone and texture. Tolerated well by sensitive skin.",
+            "description": "Plant-based retinol alternative -- found in the seeds and leaves of the Psoralea corylifolia plant. Stimulates skin cell turnover, improving tone and texture. Tolerated well by sensitive skin. According to the British Journal of Dermatology, bakuchiol performed just as well as retinol at improving fine lines and wrinkles but without the typical peeling and irritation.",
             "product1": "shield",
             "product2": "",
             "product3": ""
@@ -117,8 +117,38 @@
           "type": "ingredient",
           "settings": {
             "title": "Jojoba Seed Oil",
-            "description": "A skincare favorite. Mimics skin’s natural sebum, so helps to regulate oil production. Light and absorbs quickly, making it suitable for oily skin. Plays well with other ingredients.",
+            "description": "A beloved skincare favorite for good reason. Mimics skin’s natural sebum, so it helps to regulate oil production. Rich in Vitamin E and flavonoids, both potent fighters of oxidative stress in the skin. Light and absorbs quickly, making it suitable for oily skin. Plays well with other ingredients like ceramides and polysaccharides.",
             "product1": "shield",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "4486a7a5-a66b-4b38-87c5-d23ba1f8446e": {
+          "type": "ingredient",
+          "settings": {
+            "title": "How do I use Serums and Oils?",
+            "description": "Skincare regimens can be very overwhelming, we know! Cult of Reason pledges to keep things simple and straightforward for you. Estheticians are often asked how to incorporate serums and oils into a daily skincare ritual. Always think of product application in terms of thin to thick, or oil over water. To get a complete moisturizer, the water-giving product (Quench serum) is applied when the skin is damp after cleansing (Grit.) Pat serum into the skin and let set for a minute. Follow with the occlusive oils (Shield) to capture and hold the water to the skin. Think of Quench as the water base layer and Shield as the sealant on top.",
+            "product1": "the-trio",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "a55b80ce-7e48-4f9a-8816-93be21cf6698": {
+          "type": "ingredient",
+          "settings": {
+            "title": "What is TEWL, or Trans-Epidermal Water loss?",
+            "description": "Skin is comprised of the hypodermis, the dermis, and the epidermis -- deep, middle, and outer layers, respectively. When water leaves the skin from the dermis through the epidermis, this is known as trans epidermal water loss and is the reason why skin can quickly become dehydrated when not adequately protected. Low humidity climates, laser procedures, intense acne and anti-aging regimens can leave the skin unbalanced , and therefore a moisture barrier product must be used to maintain a healthy level of water hydration in the skin. Quench and Shield are designed to fortify and nourish the skin barrier for all skin types.",
+            "product1": "quench",
+            "product2": "shield",
+            "product3": "the-duo"
+          }
+        },
+        "82972ad2-536b-443c-91e4-d554502e35e3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "What is Collagen?",
+            "description": "While not an ingredient in our products, many of the ingredients listed here profoundly help increase collagen production in the skin. But what is collagen, exactly? Collagen and elastin are both proteins made by the body and provide the skin's internal support system. Collagen provides the structure while elastin is responsible for supplying the suppleness. Over time these vital proteins diminish thus the need to supplement both internally and topically. All three Cult of Reason products contain nutrients that directly support the creation and maintenance of collagen and elastin.",
+            "product1": "the-trio",
             "product2": "",
             "product3": ""
           }
@@ -136,7 +166,10 @@
         "59300e1b-6934-4c32-ad44-3b6b42994b16",
         "222f1cd9-dd62-4118-bdff-a6ab188ed326",
         "47d463ff-4fbc-4e56-abfb-ad630e463093",
-        "2c529816-6c60-498f-b507-b727a00042bd"
+        "2c529816-6c60-498f-b507-b727a00042bd",
+        "4486a7a5-a66b-4b38-87c5-d23ba1f8446e",
+        "a55b80ce-7e48-4f9a-8816-93be21cf6698",
+        "82972ad2-536b-443c-91e4-d554502e35e3"
       ],
       "settings": {
       }

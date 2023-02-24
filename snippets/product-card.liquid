@@ -81,6 +81,7 @@
             <h3 class="text-product-preview-title" {% if card_product.featured_media == nil %} id="title-{{ section_id }}-{{ card_product.id }}"{% endif %}>
               {{ card_product.title | escape }}
             </h3>
+          {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: card_product %}
             <p class="detail">
                 {%- if card_product.compare_at_price_max > 0 -%}
                     <span class="text-muted text-strike">{{ card_product.compare_at_price_max | money_without_trailing_zeros }}</span>
