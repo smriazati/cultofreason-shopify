@@ -10,6 +10,39 @@ function preventBarbaIntoShop() {
     account.forEach(el => el.classList.add('prevent'));
 }
 
+function setIndexAnimation() {
+    if (!gsap) { return }
+    const page = document.getElementById('pageIndex');
+    const img = page.querySelector('.bg-img');
+    const heading = page.querySelector('h1');
+    const text = page.querySelector('h2');
+
+    gsap.set(img, {
+        y: page.offsetHeight > window.innerHeight ? page.offsetHeight : window.innerHeight,
+        autoAlpha: 0
+    })
+
+    gsap.set(heading, {
+        y: (window.innerHeight - heading.offsetHeight) / 2 + heading.offsetHeight,
+        autoAlpha: 0
+
+    })
+
+    gsap.set(text, {
+        y: (window.innerHeight - text.offsetHeight) / 2 + text.offsetHeight,
+        autoAlpha: 0
+    })
+
+    let tl = gsap.timeline({
+        defaults: {
+            duration: 1,
+            ease: "power3.out"
+        },
+    });
+    tl.to(img, { y: 0, autoAlpha: 1, duration: 1 }).to(heading, { y: 0, autoAlpha: 1 }, "-=.3").to(text, { y: 0, autoAlpha: 1 }, "-=.3");
+}
+
+
 function setBodyClass(next) {
     const body = document.querySelector('body');
     const nextNamespace = next.namespace;
@@ -84,6 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     barba.hooks.beforeEnter(({ current, next }) => {
+        if (next.namespace === 'index') {
+            setIndexAnimation();
+        }
         if (current.container) {
             setBodyClass(next);
         }
