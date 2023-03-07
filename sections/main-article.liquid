@@ -39,7 +39,7 @@
       {%- when 'title' -%}
         <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
           <h1 class="h1 article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-          <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
+          <span class="h3 circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
             {{- article.published_at | time_tag: format: 'date' -}}
           </span>
         </header>

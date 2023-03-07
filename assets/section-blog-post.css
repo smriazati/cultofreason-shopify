@@ -92,6 +92,10 @@
   margin-bottom: 3rem;
 }
 
+.article-template__content.rte p+p {
+  margin-top: 24px;
+}
+
 .article-template__social-sharing {
   margin-top: 3rem;
 }
