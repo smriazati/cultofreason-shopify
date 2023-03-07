@@ -58,6 +58,7 @@
 
 .article-card__info {
   padding-top: 0.4rem;
+  text-transform: uppercase;
 }
 
 .article-card__footer {
