@@ -54,16 +54,6 @@
     </a>
   </div>
 
-  <div class="index-float-button bg-dark">
-    <a href="/collections/catalog" class="flex-row link-plain">
-        {%- for item in (1..4) -%}
-          <span class='flex-row align-center'>
-            <p class="nowrap">{{ section.settings.text2 }}</p>
-            <p class="nowrap">Shop now</p>
-          </span>
-        {%- endfor -%}
-    </a>
-  </div>
 </div>
 
 {%- render 'dark-mode-styles' -%}
@@ -113,23 +103,6 @@ body.template-index .page-container {
 }
 .index-main-button a > span > *:not(last-child) {
     margin-right: 24px;
-}
-
-.index-float-button {
-    width: 30%;
-    padding: 4px 0;
-}
-.index-float-button p {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 80%;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.index-float-button > a,
-.index-float-button a > span {
-    align-items: center;
 }
   
 .gsap-animate-in {
