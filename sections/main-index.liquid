@@ -42,13 +42,24 @@
   <h1 class="gsap-animate-in h1 text-center mb-24">{{ section.settings.heading }}</h1>
   <h2 class="gsap-animate-in large-text text-center">{{ section.settings.text }}</h2>
 
-  <div class="index-main-button bg-dark marquee">
+    <div class="index-main-button bg-dark marquee">
     <a href="/collections/catalog" class="flex-row link-plain marquee_inner">
         {%- for item in (1..4) -%}
           <span class='flex-row align-center'>
             <img src="{{ 'images_mark.svg' | asset_url }}" width=18 height=18 class="filter-invert">
             <p class="nowrap">{{ section.settings.text2 }}</p>
             <p class="nowrap">Shop now </p>
+          </span>
+        {%- endfor -%}
+    </a>
+  </div>
+
+  <div class="index-float-button bg-dark">
+    <a href="/collections/catalog" class="flex-row link-plain">
+        {%- for item in (1..4) -%}
+          <span class='flex-row align-center'>
+            <p class="nowrap">{{ section.settings.text2 }}</p>
+            <p class="nowrap">Shop now</p>
           </span>
         {%- endfor -%}
     </a>
@@ -103,6 +114,24 @@ body.template-index .page-container {
 .index-main-button a > span > *:not(last-child) {
     margin-right: 24px;
 }
+
+.index-float-button {
+    width: 30%;
+    padding: 4px 0;
+}
+.index-float-button p {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 80%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.index-float-button > a,
+.index-float-button a > span {
+    align-items: center;
+}
+  
 .gsap-animate-in {
   opacity: 0;
 }
