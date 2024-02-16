@@ -88,7 +88,7 @@
           "settings": {
             "title": "Cloudberry Seed Oil",
             "description": "Extracted from edible Nordic Rubus Chamaemorus berries. Packed with antioxidants including Vitamin E and extraordinary amounts of Vitamin C. Stimulates collagen production, protects skin from free radical damage, and targets hyperpigmentation. Combats signs of aging and inflammation.",
-            "product1": "shield",
+            "product1": "shield-bakuchiol-face-oil",
             "product2": "",
             "product3": ""
           }
@@ -98,7 +98,7 @@
           "settings": {
             "title": "Rosehip Seed Oil (Rosa Canina)",
             "description": "Anti-inflammatory oil. Full of nourishing essential fatty acids, Omega 3, 6 and 9. A high content of anthocyanin heals skin and is especially good for eczema and psoriasis. Becuase of its extra high content of omega -6, rosehip, aka linoleic acid, is thought to be beneficial when treating acne. Popular for improving post-surgical scars.",
-            "product1": "shield",
+            "product1": "shield-bakuchiol-face-oil",
             "product2": "",
             "product3": ""
           }
@@ -108,7 +108,7 @@
           "settings": {
             "title": "Bakuchiol",
             "description": "Plant-based retinol alternative -- found in the seeds and leaves of the Psoralea corylifolia plant. Stimulates skin cell turnover, improving tone and texture. Tolerated well by sensitive skin. According to the British Journal of Dermatology, bakuchiol performed just as well as retinol at improving fine lines and wrinkles but without the typical peeling and irritation.",
-            "product1": "shield",
+            "product1": "shield-bakuchiol-face-oil",
             "product2": "",
             "product3": ""
           }
@@ -118,7 +118,7 @@
           "settings": {
             "title": "Jojoba Seed Oil",
             "description": "A beloved skincare favorite for good reason. Mimics skin’s natural sebum, so it helps to regulate oil production. Rich in Vitamin E and flavonoids, both potent fighters of oxidative stress in the skin. Light and absorbs quickly, making it suitable for oily skin. Plays well with other ingredients like ceramides and polysaccharides.",
-            "product1": "shield",
+            "product1": "shield-bakuchiol-face-oil",
             "product2": "",
             "product3": ""
           }
@@ -139,7 +139,7 @@
             "title": "What is TEWL, or Trans-Epidermal Water loss?",
             "description": "Skin is comprised of the hypodermis, the dermis, and the epidermis -- deep, middle, and outer layers, respectively. When water leaves the skin from the dermis through the epidermis, this is known as trans epidermal water loss and is the reason why skin can quickly become dehydrated when not adequately protected. Low humidity climates, laser procedures, intense acne and anti-aging regimens can leave the skin unbalanced , and therefore a moisture barrier product must be used to maintain a healthy level of water hydration in the skin. Quench and Shield are designed to fortify and nourish the skin barrier for all skin types.",
             "product1": "quench-snow-mushroom-hydrating-serum",
-            "product2": "shield",
+            "product2": "shield-bakuchiol-face-oil",
             "product3": "the-duo"
           }
         },
